@@ -23,7 +23,7 @@ export function MuseumHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <div className="flex items-baseline gap-3">
-          <Link href="/" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
+          <Link href="/mockups" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
             <ArrowLeft className="size-3.5" />
             <span className="sr-only sm:not-sr-only">Mockups</span>
           </Link>

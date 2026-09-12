@@ -65,7 +65,7 @@ export function NotebookMockup() {
     <main className="theme-notebook graph-paper min-h-screen bg-background text-foreground font-mono">
       <div className="mx-auto max-w-5xl px-6 py-8">
         <Link
-          href="/"
+          href="/mockups"
           className="mb-6 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="size-3" /> Hub

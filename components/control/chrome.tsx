@@ -30,7 +30,7 @@ export function ControlHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <div className="flex items-center justify-between gap-4 px-4 py-2.5">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
+          <Link href="/mockups" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
             <ArrowLeft className="size-3.5" />
             <span className="sr-only sm:not-sr-only">Mockups</span>
           </Link>

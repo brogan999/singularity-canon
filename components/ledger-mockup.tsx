@@ -38,7 +38,7 @@ export function LedgerMockup() {
         <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-4 px-6 py-6">
           <div>
             <Link
-              href="/"
+              href="/mockups"
               className="mb-3 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="size-3" /> Hub

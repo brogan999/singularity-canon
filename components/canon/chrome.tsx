@@ -24,7 +24,7 @@ export function CanonHeader() {
           <Link href="/canon/chronology" className="transition-colors hover:text-foreground">
             Chronology
           </Link>
-          <Link href="/" className="transition-colors hover:text-foreground">
+          <Link href="/mockups" className="transition-colors hover:text-foreground">
             Mockups
           </Link>
           <span className="hidden text-gild sm:inline" aria-hidden>

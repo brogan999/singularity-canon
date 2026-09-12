@@ -29,7 +29,7 @@ export function ManuscriptHeader() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-3">
         <div className="flex items-center gap-4">
           <Link
-            href="/"
+            href="/mockups"
             className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="size-3" /> Hub

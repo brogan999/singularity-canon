@@ -20,7 +20,7 @@ export function DossierHeader() {
       <div className="mx-auto max-w-5xl px-6 pt-6">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <Link href="/" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
+            <Link href="/mockups" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground">
               <ArrowLeft className="size-3.5" /> Mockups
             </Link>
             <Link href="/dossier">

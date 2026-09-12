@@ -24,7 +24,7 @@ export function TopStrip() {
   return (
     <div className="flex items-center justify-between border-b border-border px-6 py-2">
       <Link
-        href="/"
+        href="/mockups"
         className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground"
       >
         <ArrowLeft className="size-3" /> Hub
