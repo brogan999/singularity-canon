@@ -1,0 +1,618 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-jetbrains);
+  /* Dual-layer signature accents — enables text-instrument, bg-gild,
+     border-instrument/40, etc. Resolve per theme scope. */
+  --color-instrument: var(--instrument);
+  --color-gild: var(--gild);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: dark;
+  /* Hub theme: neutral graphite so the three colored mockups pop */
+  --background: oklch(0.17 0.008 260);
+  --foreground: oklch(0.93 0.005 260);
+  --card: oklch(0.21 0.009 260);
+  --card-foreground: oklch(0.93 0.005 260);
+  --popover: oklch(0.21 0.009 260);
+  --popover-foreground: oklch(0.93 0.005 260);
+  --primary: oklch(0.93 0.005 260);
+  --primary-foreground: oklch(0.17 0.008 260);
+  --secondary: oklch(0.25 0.009 260);
+  --secondary-foreground: oklch(0.93 0.005 260);
+  --muted: oklch(0.25 0.009 260);
+  --muted-foreground: oklch(0.66 0.01 260);
+  --accent: oklch(0.25 0.009 260);
+  --accent-foreground: oklch(0.93 0.005 260);
+  --destructive: oklch(0.6 0.2 25);
+  --border: oklch(0.3 0.01 260);
+  --input: oklch(0.3 0.01 260);
+  --ring: oklch(0.55 0.01 260);
+  --chart-1: oklch(0.7 0.13 265);
+  --chart-2: oklch(0.78 0.13 80);
+  --chart-3: oklch(0.72 0.1 200);
+  --chart-4: oklch(0.6 0.16 25);
+  --chart-5: oklch(0.5 0.02 260);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.17 0.008 260);
+  --sidebar-foreground: oklch(0.93 0.005 260);
+  --sidebar-primary: oklch(0.93 0.005 260);
+  --sidebar-primary-foreground: oklch(0.17 0.008 260);
+  --sidebar-accent: oklch(0.25 0.009 260);
+  --sidebar-accent-foreground: oklch(0.93 0.005 260);
+  --sidebar-border: oklch(0.3 0.01 260);
+  --sidebar-ring: oklch(0.55 0.01 260);
+}
+
+/* ============================================================
+   Mockup 1 — Museum of Futures (cool gallery, ink + cobalt)
+   ============================================================ */
+.theme-museum {
+  color-scheme: light;
+  --background: oklch(0.975 0.004 250);
+  --foreground: oklch(0.2 0.015 265);
+  --card: oklch(0.995 0.003 250);
+  --card-foreground: oklch(0.2 0.015 265);
+  --popover: oklch(0.995 0.003 250);
+  --popover-foreground: oklch(0.2 0.015 265);
+  --primary: oklch(0.43 0.14 264);
+  --primary-foreground: oklch(0.98 0.005 250);
+  --secondary: oklch(0.93 0.005 250);
+  --secondary-foreground: oklch(0.2 0.015 265);
+  --muted: oklch(0.93 0.005 250);
+  --muted-foreground: oklch(0.47 0.01 265);
+  --accent: oklch(0.9 0.03 264);
+  --accent-foreground: oklch(0.28 0.09 264);
+  --destructive: oklch(0.55 0.19 25);
+  --border: oklch(0.88 0.006 255);
+  --input: oklch(0.88 0.006 255);
+  --ring: oklch(0.43 0.14 264);
+  --radius: 0.25rem;
+}
+
+/* ============================================================
+   Mockup 2 — Control Room (cinematic dark, amber + cyan)
+   ============================================================ */
+.theme-control {
+  color-scheme: dark;
+  --background: oklch(0.16 0.017 250);
+  --foreground: oklch(0.92 0.012 240);
+  --card: oklch(0.2 0.018 250);
+  --card-foreground: oklch(0.92 0.012 240);
+  --popover: oklch(0.2 0.018 250);
+  --popover-foreground: oklch(0.92 0.012 240);
+  --primary: oklch(0.82 0.15 75);
+  --primary-foreground: oklch(0.18 0.02 250);
+  --secondary: oklch(0.25 0.018 250);
+  --secondary-foreground: oklch(0.92 0.012 240);
+  --muted: oklch(0.24 0.018 250);
+  --muted-foreground: oklch(0.64 0.02 240);
+  --accent: oklch(0.74 0.11 205);
+  --accent-foreground: oklch(0.18 0.02 250);
+  --destructive: oklch(0.62 0.2 25);
+  --border: oklch(0.3 0.02 250);
+  --input: oklch(0.3 0.02 250);
+  --ring: oklch(0.74 0.11 205);
+  --radius: 0.375rem;
+  --chart-1: oklch(0.82 0.15 75);
+  --chart-2: oklch(0.74 0.11 205);
+  --chart-3: oklch(0.68 0.14 145);
+  --chart-4: oklch(0.62 0.2 25);
+  --chart-5: oklch(0.66 0.13 300);
+}
+
+/* ============================================================
+   Mockup 3 — Dossier / Field Manual (manila paper, stamp red)
+   ============================================================ */
+.theme-dossier {
+  color-scheme: light;
+  --background: oklch(0.9 0.028 88);
+  --foreground: oklch(0.26 0.022 60);
+  --card: oklch(0.93 0.024 88);
+  --card-foreground: oklch(0.26 0.022 60);
+  --popover: oklch(0.93 0.024 88);
+  --popover-foreground: oklch(0.26 0.022 60);
+  --primary: oklch(0.48 0.19 27);
+  --primary-foreground: oklch(0.95 0.02 88);
+  --secondary: oklch(0.86 0.028 86);
+  --secondary-foreground: oklch(0.26 0.022 60);
+  --muted: oklch(0.86 0.028 86);
+  --muted-foreground: oklch(0.46 0.025 65);
+  --accent: oklch(0.83 0.05 60);
+  --accent-foreground: oklch(0.28 0.03 55);
+  --destructive: oklch(0.48 0.19 27);
+  --border: oklch(0.7 0.03 78);
+  --input: oklch(0.7 0.03 78);
+  --ring: oklch(0.48 0.19 27);
+  --radius: 0.125rem;
+}
+
+/* ============================================================
+   Option 4 — The Ledger (actuarial register, ledger green + navy ink)
+   ============================================================ */
+.theme-ledger {
+  color-scheme: light;
+  --background: oklch(0.95 0.025 168);
+  --foreground: oklch(0.3 0.05 250);
+  --card: oklch(0.972 0.018 168);
+  --card-foreground: oklch(0.3 0.05 250);
+  --popover: oklch(0.972 0.018 168);
+  --popover-foreground: oklch(0.3 0.05 250);
+  --primary: oklch(0.32 0.06 250);
+  --primary-foreground: oklch(0.97 0.018 168);
+  --secondary: oklch(0.9 0.03 168);
+  --secondary-foreground: oklch(0.3 0.05 250);
+  --muted: oklch(0.9 0.03 168);
+  --muted-foreground: oklch(0.48 0.04 220);
+  --accent: oklch(0.87 0.05 158);
+  --accent-foreground: oklch(0.3 0.06 250);
+  --destructive: oklch(0.5 0.21 25);
+  --border: oklch(0.7 0.06 178);
+  --input: oklch(0.7 0.06 178);
+  --ring: oklch(0.5 0.21 25);
+  --radius: 0rem;
+}
+
+/* ============================================================
+   Option 5 — Declassified Brief (newsprint, black ink + stamp red)
+   ============================================================ */
+.theme-brief {
+  color-scheme: light;
+  --background: oklch(0.915 0.006 90);
+  --foreground: oklch(0.2 0.004 60);
+  --card: oklch(0.95 0.005 90);
+  --card-foreground: oklch(0.2 0.004 60);
+  --popover: oklch(0.95 0.005 90);
+  --popover-foreground: oklch(0.2 0.004 60);
+  --primary: oklch(0.2 0.004 60);
+  --primary-foreground: oklch(0.95 0.005 90);
+  --secondary: oklch(0.87 0.006 90);
+  --secondary-foreground: oklch(0.2 0.004 60);
+  --muted: oklch(0.87 0.006 90);
+  --muted-foreground: oklch(0.44 0.006 70);
+  --accent: oklch(0.5 0.2 25);
+  --accent-foreground: oklch(0.95 0.005 90);
+  --destructive: oklch(0.5 0.2 25);
+  --border: oklch(0.34 0.005 60);
+  --input: oklch(0.34 0.005 60);
+  --ring: oklch(0.5 0.2 25);
+  --radius: 0rem;
+}
+
+/* ============================================================
+   Option 6 — Field Notebook (graph paper sage, ink teal + sepia)
+   ============================================================ */
+.theme-notebook {
+  color-scheme: light;
+  --background: oklch(0.955 0.022 142);
+  --foreground: oklch(0.32 0.05 205);
+  --card: oklch(0.975 0.016 142);
+  --card-foreground: oklch(0.32 0.05 205);
+  --popover: oklch(0.975 0.016 142);
+  --popover-foreground: oklch(0.32 0.05 205);
+  --primary: oklch(0.42 0.09 205);
+  --primary-foreground: oklch(0.975 0.016 142);
+  --secondary: oklch(0.9 0.026 142);
+  --secondary-foreground: oklch(0.32 0.05 205);
+  --muted: oklch(0.9 0.026 142);
+  --muted-foreground: oklch(0.5 0.04 182);
+  --accent: oklch(0.53 0.13 42);
+  --accent-foreground: oklch(0.975 0.016 142);
+  --destructive: oklch(0.5 0.18 30);
+  --border: oklch(0.72 0.05 162);
+  --input: oklch(0.72 0.05 162);
+  --ring: oklch(0.42 0.09 205);
+  --radius: 0.125rem;
+}
+
+/* ============================================================
+   Option 7 — Illuminated Manuscript + HUD margins
+   Artifact layer loud (parchment), instrument layer thin (cyan).
+   ============================================================ */
+.theme-manuscript {
+  color-scheme: light;
+  --background: oklch(0.925 0.03 84);
+  --foreground: oklch(0.27 0.03 58);
+  --card: oklch(0.955 0.025 84);
+  --card-foreground: oklch(0.27 0.03 58);
+  --popover: oklch(0.955 0.025 84);
+  --popover-foreground: oklch(0.27 0.03 58);
+  --primary: oklch(0.55 0.11 202);
+  --primary-foreground: oklch(0.97 0.02 84);
+  --secondary: oklch(0.88 0.032 82);
+  --secondary-foreground: oklch(0.27 0.03 58);
+  --muted: oklch(0.88 0.032 82);
+  --muted-foreground: oklch(0.46 0.03 66);
+  --accent: oklch(0.74 0.1 86);
+  --accent-foreground: oklch(0.27 0.04 58);
+  --destructive: oklch(0.5 0.19 27);
+  --border: oklch(0.73 0.035 78);
+  --input: oklch(0.73 0.035 78);
+  --ring: oklch(0.55 0.11 202);
+  --radius: 0.125rem;
+  --gild: oklch(0.66 0.1 84);
+  --instrument: oklch(0.58 0.13 202);
+}
+
+/* ============================================================
+   Option 8 — Renaissance Gallery + holographic labels
+   Dim gallery wall so classical images carry the room.
+   ============================================================ */
+.theme-gallery {
+  color-scheme: dark;
+  --background: oklch(0.19 0.012 56);
+  --foreground: oklch(0.9 0.02 82);
+  --card: oklch(0.23 0.014 54);
+  --card-foreground: oklch(0.9 0.02 82);
+  --popover: oklch(0.23 0.014 54);
+  --popover-foreground: oklch(0.9 0.02 82);
+  --primary: oklch(0.78 0.13 196);
+  --primary-foreground: oklch(0.17 0.012 56);
+  --secondary: oklch(0.28 0.015 54);
+  --secondary-foreground: oklch(0.9 0.02 82);
+  --muted: oklch(0.28 0.015 54);
+  --muted-foreground: oklch(0.64 0.02 74);
+  --accent: oklch(0.76 0.11 86);
+  --accent-foreground: oklch(0.18 0.02 56);
+  --destructive: oklch(0.6 0.19 27);
+  --border: oklch(0.34 0.016 58);
+  --input: oklch(0.34 0.016 58);
+  --ring: oklch(0.78 0.13 196);
+  --radius: 0.125rem;
+  --gild: oklch(0.8 0.12 88);
+  --instrument: oklch(0.82 0.14 196);
+}
+
+/* ============================================================
+   Option 9 — Monastery Archive Terminal
+   Sacred dossier panels on a dark sci-fi console.
+   ============================================================ */
+.theme-monastery {
+  color-scheme: dark;
+  --background: oklch(0.16 0.016 242);
+  --foreground: oklch(0.88 0.03 84);
+  --card: oklch(0.2 0.017 242);
+  --card-foreground: oklch(0.88 0.03 84);
+  --popover: oklch(0.2 0.017 242);
+  --popover-foreground: oklch(0.88 0.03 84);
+  --primary: oklch(0.75 0.12 196);
+  --primary-foreground: oklch(0.15 0.016 242);
+  --secondary: oklch(0.25 0.018 242);
+  --secondary-foreground: oklch(0.88 0.03 84);
+  --muted: oklch(0.25 0.018 242);
+  --muted-foreground: oklch(0.62 0.02 220);
+  --accent: oklch(0.78 0.11 86);
+  --accent-foreground: oklch(0.16 0.02 242);
+  --destructive: oklch(0.62 0.19 27);
+  --border: oklch(0.31 0.018 242);
+  --input: oklch(0.31 0.018 242);
+  --ring: oklch(0.75 0.12 196);
+  --radius: 0.25rem;
+  --gild: oklch(0.79 0.11 86);
+  --instrument: oklch(0.78 0.13 196);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Control Room: faint CRT scanlines */
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--foreground) 4%, transparent) 0px,
+      color-mix(in oklch, var(--foreground) 4%, transparent) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+  /* Dossier: subtle paper grain */
+  .paper-grain {
+    background-image:
+      radial-gradient(
+        circle at 20% 30%,
+        color-mix(in oklch, var(--foreground) 5%, transparent) 0,
+        transparent 0.12rem
+      ),
+      radial-gradient(
+        circle at 70% 60%,
+        color-mix(in oklch, var(--foreground) 4%, transparent) 0,
+        transparent 0.1rem
+      );
+    background-size: 7px 7px, 11px 11px;
+  }
+  /* Dossier: rubber-stamp label */
+  .stamp {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    transform: rotate(-6deg);
+    letter-spacing: 0.15em;
+  }
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--foreground) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 6%, transparent) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Field Notebook: fine graph paper with heavier decade lines */
+  .graph-paper {
+    background-image:
+      linear-gradient(color-mix(in oklch, var(--foreground) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklch, var(--foreground) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(color-mix(in oklch, var(--foreground) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklch, var(--foreground) 4%, transparent) 1px, transparent 1px);
+    background-size: 96px 96px, 96px 96px, 16px 16px, 16px 16px;
+  }
+
+  /* Declassified Brief: redaction bar that lifts on hover */
+  .redacted {
+    background: var(--foreground);
+    color: transparent;
+    border-radius: 1px;
+    padding: 0 0.15em;
+    transition: background 0.2s ease, color 0.2s ease;
+    cursor: help;
+  }
+  .redacted:hover {
+    background: color-mix(in oklch, var(--accent) 22%, transparent);
+    color: var(--foreground);
+  }
+
+  /* The Ledger: alternating ruled rows + red margin rule */
+  .ledger-rows > *:nth-child(even) {
+    background: color-mix(in oklch, var(--foreground) 4%, transparent);
+  }
+
+  /* ---- Dual-layer (sacred + instrument) shared utilities ---- */
+
+  /* Chamfered HUD panel — the sci-fi instrument shape */
+  .hud-panel {
+    --chamfer: 0.75rem;
+    clip-path: polygon(
+      var(--chamfer) 0,
+      100% 0,
+      100% calc(100% - var(--chamfer)),
+      calc(100% - var(--chamfer)) 100%,
+      0 100%,
+      0 var(--chamfer)
+    );
+  }
+  .hud-panel-sm {
+    --chamfer: 0.4rem;
+    clip-path: polygon(
+      var(--chamfer) 0,
+      100% 0,
+      100% calc(100% - var(--chamfer)),
+      calc(100% - var(--chamfer)) 100%,
+      0 100%,
+      0 var(--chamfer)
+    );
+  }
+
+  /* Illuminated drop-cap for the opening paragraph of a folio.
+     Works applied directly to a paragraph, or to a container wrapping paragraphs. */
+  .drop-cap::first-letter,
+  .drop-cap > p:first-child::first-letter {
+    float: left;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 3.4em;
+    line-height: 0.8;
+    padding: 0.1em 0.12em 0 0;
+    color: var(--gild);
+  }
+
+  /* Fine measurement grid overlay for the instrument layer */
+  .instrument-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--instrument) 12%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--instrument) 12%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Thin scanline wash for HUD surfaces */
+  .hud-scan {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--instrument) 7%, transparent) 0,
+      color-mix(in oklch, var(--instrument) 7%, transparent) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  }
+
+  /* Parchment vignette for artifact plates */
+  .parchment {
+    background-image:
+      radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        color-mix(in oklch, var(--foreground) 14%, transparent) 100%
+      ),
+      radial-gradient(circle at 25% 20%, color-mix(in oklch, var(--foreground) 4%, transparent) 0, transparent 0.1rem);
+    background-size: 100% 100%, 6px 6px;
+  }
+
+  /* Gilded hairline frame for classical images */
+  .gild-frame {
+    border: 1px solid var(--gild);
+    box-shadow:
+      0 0 0 1px color-mix(in oklch, var(--gild) 40%, transparent),
+      inset 0 0 24px color-mix(in oklch, var(--foreground) 18%, transparent);
+  }
+
+  /* Corner ticks for HUD frames */
+  .hud-ticks {
+    position: relative;
+  }
+  .hud-ticks::before,
+  .hud-ticks::after {
+    content: "";
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-color: var(--instrument);
+  }
+  .hud-ticks::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+  }
+  .hud-ticks::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+  }
+
+  @keyframes hud-sweep {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(1200%); opacity: 0; }
+  }
+  .hud-sweep::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      color-mix(in oklch, var(--instrument) 45%, transparent),
+      transparent
+    );
+    height: 12%;
+    animation: hud-sweep 6s linear infinite;
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hud-sweep::after {
+      animation: none;
+      opacity: 0;
+    }
+  }
+}

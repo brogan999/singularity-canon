@@ -1,0 +1,226 @@
+/* ============================================================
+   Illuminated Manuscript — Portable Theme Layer
+   ------------------------------------------------------------
+   A dual-layer design system: a loud "artifact" layer (parchment,
+   serif, gold leaf) with a thin "instrument" layer (cyan HUD).
+
+   USAGE (Tailwind v4):
+     1. Ensure Tailwind is imported first in your global stylesheet:
+          @import "tailwindcss";
+     2. Then import this file:
+          @import "../manuscript-ds/theme.css";
+     3. Apply the theme by adding `theme-manuscript` to any wrapper
+        (or <html>). Everything inside inherits the tokens.
+
+   Requires the fonts from manuscript-ds/fonts.ts to be loaded with
+   the CSS variables --font-fraunces, --font-jetbrains, --font-geist.
+   ============================================================ */
+
+@theme inline {
+  /* Type — serif is the artifact voice, mono is the instrument voice */
+  --font-sans: var(--font-geist);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-jetbrains);
+
+  /* Expose the two signature accents to Tailwind so utilities like
+     `text-instrument`, `bg-gild`, `border-instrument/40` all work. */
+  --color-instrument: var(--instrument);
+  --color-gild: var(--gild);
+
+  /* Standard shadcn token bridge (safe to keep even if already mapped) */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* ------------------------------------------------------------
+   Tokens — the Illuminated Manuscript palette
+   Parchment background, iron-gall ink foreground, cyan instrument,
+   gold-leaf gild. Light scheme only by design.
+   ------------------------------------------------------------ */
+.theme-manuscript {
+  color-scheme: light;
+  --background: oklch(0.925 0.03 84); /* parchment */
+  --foreground: oklch(0.27 0.03 58); /* iron-gall ink */
+  --card: oklch(0.955 0.025 84); /* lighter vellum */
+  --card-foreground: oklch(0.27 0.03 58);
+  --popover: oklch(0.955 0.025 84);
+  --popover-foreground: oklch(0.27 0.03 58);
+  --primary: oklch(0.55 0.11 202); /* instrument cyan as primary */
+  --primary-foreground: oklch(0.97 0.02 84);
+  --secondary: oklch(0.88 0.032 82);
+  --secondary-foreground: oklch(0.27 0.03 58);
+  --muted: oklch(0.88 0.032 82);
+  --muted-foreground: oklch(0.46 0.03 66);
+  --accent: oklch(0.74 0.1 86); /* soft gold */
+  --accent-foreground: oklch(0.27 0.04 58);
+  --destructive: oklch(0.5 0.19 27); /* rubric red */
+  --border: oklch(0.73 0.035 78);
+  --input: oklch(0.73 0.035 78);
+  --ring: oklch(0.55 0.11 202);
+  --radius: 0.125rem; /* nearly square — bound codex, not app cards */
+
+  /* Signature dual-layer accents */
+  --gild: oklch(0.66 0.1 84); /* gold leaf */
+  --instrument: oklch(0.58 0.13 202); /* HUD cyan */
+
+  /* Radius scale */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+/* Apply base ink + parchment when the theme wraps a full surface */
+.theme-manuscript {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* ------------------------------------------------------------
+   Signature utilities
+   ------------------------------------------------------------ */
+@layer utilities {
+  /* Chamfered HUD panel — the sci-fi instrument shape */
+  .hud-panel {
+    --chamfer: 0.75rem;
+    clip-path: polygon(
+      var(--chamfer) 0,
+      100% 0,
+      100% calc(100% - var(--chamfer)),
+      calc(100% - var(--chamfer)) 100%,
+      0 100%,
+      0 var(--chamfer)
+    );
+  }
+  .hud-panel-sm {
+    --chamfer: 0.4rem;
+    clip-path: polygon(
+      var(--chamfer) 0,
+      100% 0,
+      100% calc(100% - var(--chamfer)),
+      calc(100% - var(--chamfer)) 100%,
+      0 100%,
+      0 var(--chamfer)
+    );
+  }
+
+  /* Fine measurement grid overlay for the instrument layer */
+  .instrument-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklch, var(--instrument) 12%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklch, var(--instrument) 12%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Thin scanline wash for HUD surfaces */
+  .hud-scan {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--instrument) 7%, transparent) 0,
+      color-mix(in oklch, var(--instrument) 7%, transparent) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  }
+
+  /* Parchment vignette for artifact plates */
+  .parchment {
+    background-image:
+      radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        color-mix(in oklch, var(--foreground) 14%, transparent) 100%
+      ),
+      radial-gradient(circle at 25% 20%, color-mix(in oklch, var(--foreground) 4%, transparent) 0, transparent 0.1rem);
+    background-size: 100% 100%, 6px 6px;
+  }
+
+  /* Gilded hairline frame for illuminated images */
+  .gild-frame {
+    border: 1px solid var(--gild);
+    box-shadow:
+      0 0 0 1px color-mix(in oklch, var(--gild) 40%, transparent),
+      inset 0 0 24px color-mix(in oklch, var(--foreground) 18%, transparent);
+  }
+
+  /* Corner ticks for HUD frames */
+  .hud-ticks {
+    position: relative;
+  }
+  .hud-ticks::before,
+  .hud-ticks::after {
+    content: "";
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-color: var(--instrument);
+  }
+  .hud-ticks::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+  }
+  .hud-ticks::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+  }
+
+  /* Scanning sweep for live instrument panels */
+  @keyframes hud-sweep {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(1200%); opacity: 0; }
+  }
+  .hud-sweep::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      color-mix(in oklch, var(--instrument) 45%, transparent),
+      transparent
+    );
+    height: 12%;
+    animation: hud-sweep 6s linear infinite;
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hud-sweep::after {
+      animation: none;
+      opacity: 0;
+    }
+  }
+
+  /* Illuminated drop-cap for the opening of a folio.
+     Works applied directly to a paragraph, or to a container wrapping paragraphs. */
+  .drop-cap::first-letter,
+  .drop-cap > p:first-child::first-letter {
+    float: left;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 3.4em;
+    line-height: 0.8;
+    padding: 0.1em 0.12em 0 0;
+    color: var(--gild);
+  }
+}
