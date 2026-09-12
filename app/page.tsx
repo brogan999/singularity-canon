@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { siteMeta } from "@/lib/atlas-data"
+import { canon } from "@/lib/canon-data"
 
 const mockups = [
   {
@@ -136,6 +137,8 @@ const duals = [
   },
 ]
 
+const canonCount = canon.length
+
 export default function HubPage() {
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
@@ -164,7 +167,7 @@ export default function HubPage() {
               Design system, applied to a real corpus
             </p>
             <p className="mt-3 text-pretty text-lg font-medium leading-snug">
-              The Illuminated Manuscript theme dressing The Singularity Canon — 104 forecasts,
+              The Illuminated Manuscript theme dressing The Singularity Canon — {canonCount} forecasts,
               arguments, and fictions rendered as an illuminated volume with a live instrument margin.
             </p>
           </div>

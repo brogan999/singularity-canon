@@ -5,20 +5,26 @@
 //
 //   <source.md>    Path to the canon markdown export. Defaults to
 //                  scripts/canon-source.md if omitted.
-//   --with-body    Also extract each source's full body text to
-//                  content/canon/<slug>.md and record bodyPath + wordCount
-//                  in the index. Omit this to produce the lean, summary-only
-//                  index (recommended for bundling; bodies load on demand).
+//   --with-body    Also split each source's full body into reading "leaves"
+//                  under content/canon/<slug>/ and record wordCount +
+//                  leafCount in the index. Omit this to produce the lean,
+//                  summary-only index (what production deploys).
 //
 // Output:
-//   lib/canon-data.ts            structured index (always)
-//   content/canon/<slug>.md      per-source body text (only with --with-body)
+//   lib/canon-data.ts                     structured index (always)
+//   content/canon/<slug>/manifest.json    leaf table of contents (--with-body)
+//   content/canon/<slug>/001.html …       one file per leaf (--with-body)
 //
 // The parser is format-driven, not count-driven: it discovers every
 // "# Part N: ..." section and every "**Author · Year**" anchor, so adding
 // more sources to the export requires no code changes here.
+//
+// Bodies are converted to HTML here, at parse time, rather than rendered in
+// the app: leaves are static, so there is no reason to ship a markdown parser
+// to the browser or re-parse on every request.
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs"
+import { readFileSync, writeFileSync, mkdirSync, rmSync, statSync } from "node:fs"
+import { marked } from "marked"
 
 const args = process.argv.slice(2)
 const withBody = args.includes("--with-body")
@@ -60,8 +66,220 @@ function cleanSrc(line) {
   return inner
 }
 
+// --- body chunking -------------------------------------------------------
+//
+// FROZEN. These two numbers determine every /canon/<slug>/<leaf> URL that
+// exists. Changing them silently repoints every deep link and orphans every
+// bookmark; nothing in the system protects against that. Treat as public API.
+const TARGET_WORDS = 2500 // ~10 minutes of reading
+const MIN_WORDS = 1200 // a chapter heading below this won't start a new leaf
+
+const countWords = (s) => (s.match(/\S+/g) || []).length
+
+const headingOf = (block) => {
+  const m = block.match(/^(#{1,6})\s+(.*)$/)
+  return m ? { depth: m[1].length, text: plain(m[2]) } : null
+}
+
+/** Strip markdown decoration for use in labels. */
+function plain(s) {
+  return s
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[*`\\]/g, "")
+    .trim()
+}
+
+/**
+ * Blank-line-separated atomic blocks. Pandoc writes one paragraph per line,
+ * so this needs no reflow. Code fences stay whole; trailing "\" hard-breaks
+ * from the PDF/epub extraction are dropped.
+ */
+function toBlocks(body) {
+  const out = []
+  let buf = []
+  let fence = false
+  for (const raw of body.split("\n")) {
+    const line = raw.replace(/[ \t]+$/, "").replace(/\\+$/, "")
+    if (/^```/.test(line)) fence = !fence
+    if (!fence && line === "") {
+      if (buf.length) out.push(buf.join("\n"))
+      buf = []
+      continue
+    }
+    buf.push(line)
+  }
+  if (buf.length) out.push(buf.join("\n"))
+  return out.filter((b) => b.trim() !== "")
+}
+
+/**
+ * Which heading level is this work's chapter spine: the shallowest depth > 1
+ * that occurs at least 3 times, else null.
+ *
+ * Headings are not a reliable spine across this corpus — the 180k-word Foom
+ * Debate and Last and First Men have none at all, while Age of Em has 148.
+ * The >= 3 test is what makes a work with a single stray "##" (Superintelligence)
+ * fall through to its "###" level instead of producing one enormous leaf.
+ */
+function chapterDepth(blocks) {
+  const seen = {}
+  for (const b of blocks) {
+    const h = headingOf(b)
+    if (h && h.depth > 1) seen[h.depth] = (seen[h.depth] || 0) + 1
+  }
+  for (const d of [2, 3, 4]) if ((seen[d] || 0) >= 3) return d
+  return null
+}
+
+const PUBLISHING_BOILERPLATE =
+  /\b(ISBN|all rights reserved|copyright ©|©\s*\d{4}|first published|printed in|library of congress|university press|published by|typeset|cataloguing|cataloging|\bpaperback\b|e-?book edition)\b/i
+
+/** Leading web/ebook chrome: download offers, format lists, a contents heading. */
+const SITE_CHROME =
+  /^\s*(table\s+of\s+contents|contents)\s*$|\b(download as|zipped html|mobipocket|cover art|available in (pdf|epub)|read online|other formats)\b/i
+
+/** A contents list: mostly link-bearing list items. */
+function isLinkList(block) {
+  const rows = block.split("\n").filter((l) => l.trim())
+  if (rows.length < 2) return false
+  const listy = rows.filter((l) => /^\s*([-*]|\d+\.)\s/.test(l)).length
+  const linky = rows.filter((l) => /\]\(|https?:\/\//.test(l)).length
+  return listy >= rows.length * 0.6 && linky >= rows.length * 0.6
+}
+
+/**
+ * A stack of short, unpunctuated lines — a chapter list that survived
+ * conversion without its list markup. Only ever consulted while scanning
+ * front matter, and the 300-word budget caps how much it can take.
+ */
+function isFragmentStack(block) {
+  const rows = block
+    .split("\n")
+    .map((l) => plain(l).replace(/^>\s*/, "").trim())
+    .filter(Boolean)
+  if (rows.length < 3) return false
+  const fragments = rows.filter((l) => countWords(l) <= 8 && !/[.?!]["')\]]?$/.test(l)).length
+  return fragments >= rows.length * 0.7
+}
+
+/**
+ * Does this leading block look like extraction debris rather than the work?
+ *
+ * Deliberately a signature test, not a length test. An earlier length-based
+ * rule ("skip to the first 40-word paragraph") ate the opening of every
+ * interview transcript, because dialogue turns and topic lists are short.
+ */
+function looksLikeDebris(block, title) {
+  const t = plain(block).trim()
+  if (!t) return true
+  const w = countWords(t)
+  const h = headingOf(block)
+  // A leading heading that just repeats the work's title — the reader already shows it.
+  // Test the heading's text, not the raw "## …" line, or the anchored patterns never match.
+  if (h) return norm(h.text) === norm(title) || PUBLISHING_BOILERPLATE.test(h.text) || SITE_CHROME.test(h.text)
+  if (SITE_CHROME.test(t) && w <= 60) return true // download offers, format lists, "Contents"
+  if (isLinkList(block) || isFragmentStack(block)) return true // the contents list itself
+  if (/^[\d\s.,:;—–-]+$/.test(t)) return true // orphan page numbers from a shredded contents list
+  if (/^[ivxlcdm\s.,:;—–-]+$/i.test(t) && w <= 6) return true // roman numerals
+  if (PUBLISHING_BOILERPLATE.test(t)) return true
+  if (norm(t) === norm(title)) return true // bare repeated title
+  if (w <= 6 && !/[.?!]["')\]]?$/.test(t)) return true // stray fragment, no sentence
+  return false
+}
+
+const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()
+
+/**
+ * Drop leading extraction debris — repeated titles, ISBNs, copyright pages and
+ * shredded contents lists that survive PDF/epub conversion. Verified against
+ * the Foom Debate and Age of Em, which otherwise open on front matter, and
+ * against the Dwarkesh transcripts, which must NOT be trimmed at all.
+ * Stops at the first block that looks like the work. Returns the count so it
+ * stays auditable in the manifest.
+ */
+function trimFrontMatter(blocks, title) {
+  let i = 0
+  let words = 0
+  while (i < blocks.length && i < 40 && looksLikeDebris(blocks[i], title)) {
+    words += countWords(blocks[i])
+    if (words > 300) break // a real work never opens with 300 words of debris
+    i++
+  }
+  return i > 0 ? { kept: blocks.slice(i), dropped: i } : { kept: blocks, dropped: 0 }
+}
+
+/** Break before a block iff it opens a chapter and the leaf is past MIN, or the leaf is full. */
+function chunk(blocks, depth) {
+  const out = []
+  let cur = []
+  let words = 0
+  let heading = null
+  let openedUnder = null
+  const flush = () => {
+    if (cur.length) out.push({ blocks: cur, words, heading: openedUnder })
+    cur = []
+    words = 0
+  }
+  for (const b of blocks) {
+    const h = headingOf(b)
+    const isChapter = h && depth != null && h.depth <= depth
+    if (cur.length && ((isChapter && words >= MIN_WORDS) || words >= TARGET_WORDS)) flush()
+    if (!cur.length) openedUnder = isChapter ? h.text : heading
+    if (h) heading = h.text
+    cur.push(b)
+    words += countWords(b)
+  }
+  flush()
+  // A trailing scrap (an afterword heading, a stray line) shouldn't get its own
+  // leaf — it reads as a broken page. Fold it back into the leaf before it.
+  if (out.length > 1 && out.at(-1).words < MIN_WORDS / 4) {
+    const tail = out.pop()
+    const prev = out.at(-1)
+    prev.blocks.push(...tail.blocks)
+    prev.words += tail.words
+  }
+  return out
+}
+
+/** First ~52 characters of opening prose — the medieval incipit, for headingless works. */
+function incipit(block) {
+  const t = plain(block).replace(/^[>\-*\s]+/, "")
+  return t.length <= 52 ? t : t.slice(0, 51).replace(/\s+\S*$/, "") + "…"
+}
+
+function labelFor(leaf, priorLeaves) {
+  const h = headingOf(leaf.blocks[0])
+  if (h) return h.text
+  if (leaf.heading) {
+    const nth = priorLeaves.filter((p) => p.heading === leaf.heading).length + 1
+    return nth === 1 ? leaf.heading : `${leaf.heading} · ${nth}`
+  }
+  const prose = leaf.blocks.find((b) => !headingOf(b)) ?? leaf.blocks[0]
+  return incipit(prose)
+}
+
+/**
+ * Keep only links that actually go somewhere. 12,675 of the corpus's 20,007
+ * links are dead epub anchors like [Overview](#part0005.html_concha2-div1-1);
+ * rendering those as links is noise pointing at nothing.
+ */
+function flattenDeadLinks(md) {
+  return md.replace(/\[([^\]]*)\]\(([^)\s]*)(?:\s+"[^"]*")?\)/g, (whole, text, href) =>
+    /^(https?:|mailto:)/i.test(href) ? whole : text,
+  )
+}
+
+/** Defuse the tags that could execute. The corpus is self-generated, but this HTML is injected. */
+const defuse = (md) =>
+  md.replace(/<(\/?)(script|style|iframe|object|embed|form|input|link|meta)\b/gi, "&lt;$1$2")
+
+marked.setOptions({ gfm: true, breaks: false, mangle: false, headerIds: false })
+const toHtml = (md) => marked.parse(defuse(flattenDeadLinks(md)))
+
 const entries = []
 const usedSlugs = new Set()
+const collisions = []
+const orphanAnchors = []
 
 for (let i = 0; i < lines.length; i++) {
   const a = lines[i].match(anchor)
@@ -87,7 +305,12 @@ for (let i = 0; i < lines.length; i++) {
       break
     }
   }
-  if (!title) continue
+  if (!title) {
+    // An anchor with no "# " title within 7 lines above it. Previously dropped
+    // in silence, which made a malformed export look like a clean one.
+    orphanAnchors.push({ line: i + 1, text: inner })
+    continue
+  }
 
   // src: within next 3 lines
   let src = null
@@ -126,8 +349,12 @@ for (let i = 0; i < lines.length; i++) {
   }
 
   let slug = slugify(title)
-  let n = 2
-  while (usedSlugs.has(slug)) slug = `${slugify(title)}-${n++}`
+  if (usedSlugs.has(slug)) {
+    const base = slug
+    let n = 2
+    while (usedSlugs.has(slug)) slug = `${base}-${n++}`
+    collisions.push({ title, base, resolved: slug })
+  }
   usedSlugs.add(slug)
 
   const part = partFor(i)
@@ -149,6 +376,8 @@ for (let i = 0; i < lines.length; i++) {
 // --- optional: extract full body text per entry ---
 // Body = everything between this entry's summary and the next entry's title
 // (or the next part header / end of file), minus surrounding blank lines.
+let totalLeaves = 0
+let totalTrimmed = 0
 if (withBody) {
   mkdirSync("content/canon", { recursive: true })
   const nextPartLine = (fromLine) => {
@@ -165,11 +394,44 @@ if (withBody) {
       .slice(e._summaryEnd + 1, hardStop)
       .join("\n")
       .replace(/^\s+|\s+$/g, "")
-    const wordCount = body ? body.split(/\s+/).length : 0
-    const bodyPath = `content/canon/${e.slug}.md`
-    writeFileSync(bodyPath, body ? `# ${e.title}\n\n${body}\n` : `# ${e.title}\n`, "utf8")
-    e.bodyPath = `canon/${e.slug}.md`
-    e.wordCount = wordCount
+
+    const { kept, dropped } = trimFrontMatter(toBlocks(body), e.title)
+    const depth = chapterDepth(kept)
+    const leaves = chunk(kept, depth)
+
+    const dir = `content/canon/${e.slug}`
+    rmSync(dir, { recursive: true, force: true }) // never leave stale leaves behind
+    mkdirSync(dir, { recursive: true })
+
+    let startWord = 0
+    const toc = []
+    leaves.forEach((leaf, k) => {
+      const n = k + 1
+      writeFileSync(`${dir}/${String(n).padStart(3, "0")}.html`, toHtml(leaf.blocks.join("\n\n")), "utf8")
+      toc.push({
+        n,
+        label: labelFor(leaf, leaves.slice(0, k)),
+        heading: leaf.heading ?? null,
+        words: leaf.words,
+        startWord,
+      })
+      startWord += leaf.words
+    })
+
+    writeFileSync(
+      `${dir}/manifest.json`,
+      JSON.stringify(
+        { slug: e.slug, title: e.title, words: startWord, headingDepth: depth, frontMatterDropped: dropped, leaves: toc },
+        null,
+        1,
+      ),
+      "utf8",
+    )
+
+    e.wordCount = startWord
+    e.leafCount = leaves.length
+    totalLeaves += leaves.length
+    totalTrimmed += dropped
   })
 }
 
@@ -180,9 +442,16 @@ for (const e of entries) {
 }
 
 // --- emit TS ---
-const bodyType = withBody
-  ? `\n  bodyPath: string\n  wordCount: number`
-  : ""
+// Only two numbers per entry ride in the index. Bodies and leaf tables stay on
+// disk: app/canon/page.tsx is a Client Component, so everything in this module
+// ships to the browser.
+const bodyType = withBody ? `\n  wordCount: number\n  leafCount: number` : ""
+
+const compiledOn = statSync(SRC).mtime.toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+})
 
 const header = `// AUTO-GENERATED from The Singularity Canon.
 // Do not edit by hand; regenerate via: node scripts/parse-canon.mjs <source.md>${withBody ? " --with-body" : ""}
@@ -200,7 +469,8 @@ export type CanonEntry = {
 }
 
 export const compiledFor = "Alex Brogan"
-export const compiledOn = "10 September 2026"
+export const compiledOn = ${JSON.stringify(compiledOn)}
+export const hasBodies = ${withBody}
 
 export const parts: { id: string; label: string }[] = ${JSON.stringify(parts.map((p) => ({ id: p.id, label: p.label })), null, 2)}
 
@@ -225,12 +495,28 @@ export const authorsCount = new Set(canon.map((e) => e.author)).size
 mkdirSync("lib", { recursive: true })
 writeFileSync("lib/canon-data.ts", header, "utf8")
 
-console.log(`[v0] source: ${SRC}`)
-console.log(`[v0] parsed ${entries.length} entries across ${parts.length} parts`)
+console.log(`source: ${SRC}  (compiled ${compiledOn})`)
+console.log(`parsed ${entries.length} entries across ${parts.length} parts`)
 const noSrc = entries.filter((e) => !e.src).length
 const noBullets = entries.filter((e) => e.bullets.length === 0).length
-console.log(`[v0] missing src: ${noSrc}, missing bullets: ${noBullets}`)
+const noLead = entries.filter((e) => !e.lead).length
+console.log(`missing src: ${noSrc}, missing bullets: ${noBullets}, missing lead: ${noLead}`)
+
+for (const c of collisions) {
+  console.warn(`  ! slug collision: "${c.title}" wanted ${c.base}, got ${c.resolved}`)
+}
+for (const o of orphanAnchors) {
+  console.warn(`  ! anchor with no title at line ${o.line}: ${o.text} — entry DROPPED`)
+}
+
 if (withBody) {
   const words = entries.reduce((s, e) => s + (e.wordCount ?? 0), 0)
-  console.log(`[v0] wrote ${entries.length} body files to content/canon/ (${words.toLocaleString()} words total)`)
+  console.log(
+    `wrote ${totalLeaves.toLocaleString()} leaves across ${entries.length} works ` +
+      `(${words.toLocaleString()} words, ${totalTrimmed} front-matter blocks trimmed)`,
+  )
+  const biggest = [...entries].sort((a, b) => (b.leafCount ?? 0) - (a.leafCount ?? 0)).slice(0, 3)
+  for (const e of biggest) console.log(`    ${String(e.leafCount).padStart(4)} leaves  ${e.title.slice(0, 56)}`)
+  const noBody = entries.filter((e) => !e.leafCount)
+  for (const e of noBody) console.warn(`  ! no body extracted: ${e.slug}`)
 }

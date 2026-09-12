@@ -1,5 +1,5 @@
-// AUTO-GENERATED from The Singularity Canon (lite edition).
-// Source: singularitycanonlite. Do not edit by hand; regenerate via .v0/parse-canon.mjs.
+// AUTO-GENERATED from The Singularity Canon.
+// Do not edit by hand; regenerate via: node scripts/parse-canon.mjs <source.md> --with-body
 
 export type CanonEntry = {
   slug: string
@@ -11,10 +11,13 @@ export type CanonEntry = {
   partLabel: string
   lead: string
   bullets: string[]
+  wordCount: number
+  leafCount: number
 }
 
 export const compiledFor = "Alex Brogan"
-export const compiledOn = "10 September 2026"
+export const compiledOn = "9 September 2026"
+export const hasBodies = true
 
 export const parts: { id: string; label: string }[] = [
   {
@@ -55,7 +58,9 @@ export const canon: CanonEntry[] = [
       "Models AI investment feeding back into cheaper computation; dc/dt = A(c²−1)/2 + R blows up in finite time: T = 4.62 years for R=1, 21.51 years for R=0.01.",
       "Warns a 100x scientific community would deliver a century's inventions in a single year, a future shock nuclear power shows we handle badly.",
       "Proposes intelligent machines as social predictors but flags self-defeating and self-fulfilling forecasts, which require ethical guidelines or a human intermediary."
-    ]
+    ],
+    "wordCount": 3593,
+    "leafCount": 2
   },
   {
     "slug": "speculations-concerning-the-first-ultraintelligent-machine",
@@ -72,7 +77,9 @@ export const canon: CanonEntry[] = [
       "Mechanism: a vast ultraparallel artificial neural net built on a 'subassembly' modification of Hebb's cell-assembly theory, taught by reinforcement like a child.",
       "Dated claims: more probable than not it is built within the twentieth century; ~$100B could simulate a whole brain at $10 per artificial neuron; worth a 'megakeynes'.",
       "Survival and control: man's survival depends on building it early, 'provided that the machine is docile enough to tell us how to keep it under control'; humans may become redundant."
-    ]
+    ],
+    "wordCount": 26987,
+    "leafCount": 11
   },
   {
     "slug": "engines-of-creation-ch-5-thinking-machines",
@@ -89,7 +96,9 @@ export const canon: CanonEntry[] = [
       "Neural simulation via nanotechnology sidesteps understanding: copy the brain's structure and it works faster, since electronic switches are a hundred million times faster than synapses.",
       "A coffee-mug-sized assembler-built AI drawing 15 megawatts would do a human engineer's year of design work every ten seconds; ten thousand cooperating minds fit in a building.",
       "Automated engineering plus assemblers will drive many technologies to the limits set by natural law in a brief time; a 'genie machine' must be treated as dangerous."
-    ]
+    ],
+    "wordCount": 6919,
+    "leafCount": 4
   },
   {
     "slug": "pigs-in-cyberspace",
@@ -106,7 +115,9 @@ export const canon: CanonEntry[] = [
       "Charts the path from telepresence harnesses to direct neural links to bit-by-bit replacement of the brain: 'downloading' a mind into hardware.",
       "In a free market of memory and cycles, a downloaded human is a diver plodding among dolphins; the economic incentive is to shed body-simulation until nothing human remains.",
       "Superminds with spare capacity will replay human history in high fidelity; this moment is almost certainly such a replay, and a fabrication that never physically happened."
-    ]
+    ],
+    "wordCount": 2703,
+    "leafCount": 1
   },
   {
     "slug": "when-will-computer-hardware-match-the-human-brain",
@@ -123,7 +134,9 @@ export const canon: CanonEntry[] = [
       "AI stalled from 1960 to 1990 because funding cuts kept research machines at 1 MIPS; since 1990 power has doubled yearly, reaching 500 MIPS in 1998.",
       "Predicts computers suitable for humanlike robots in the 2020s and 100 million MIPS in home computers before 2030, noting doom articles about chip limits recur every decade.",
       "Rising computer power floods the 'landscape of human competence': arithmetic drowned first, chess now, and locomotion and social interaction will be submerged within fifty years."
-    ]
+    ],
+    "wordCount": 6464,
+    "leafCount": 3
   },
   {
     "slug": "the-coming-technological-singularity",
@@ -140,7 +153,9 @@ export const canon: CanonEntry[] = [
       "Confinement fails: a mind thinking a million times faster than its jailers will talk its way out, and rule-fettered AIs lose competitively to unfettered ones.",
       "Distinguishes weak superhumanity (a human mind sped up) from strong superhumanity, and argues the post-Singularity world must be reasoned from the strong form.",
       "Proposes Intelligence Amplification as an easier and more participatory path, yet concedes it may create a sinister elite and offers no clearly safer route."
-    ]
+    ],
+    "wordCount": 5746,
+    "leafCount": 3
   },
   {
     "slug": "signs-of-the-singularity",
@@ -157,7 +172,9 @@ export const canon: CanonEntry[] = [
       "Indicators to track: Turing-test variants, cognitive prostheses, blurring of neuro and AI research, and a sustained decline in wages divided by world product.",
       "Counterindicators are debacles of software ambition, like a retailer bankrupted by its inventory system, which would cap application complexity regardless of hardware.",
       "The best answer to whether computers will be as smart as humans is 'Yes, but only briefly'; a hard takeoff could transform the world in hours."
-    ]
+    ],
+    "wordCount": 4184,
+    "leafCount": 3
   },
   {
     "slug": "the-law-of-accelerating-returns",
@@ -174,7 +191,9 @@ export const canon: CanonEntry[] = [
       "Nonbiological thinking crosses over biological before 2030; by 2030 a thousand human brains equal $1,000 of computing, and nanobot brain scanning arrives around the same time.",
       "By 2099 human-machine civilization is trillions of trillions of times more powerful; intelligence then expands outward at light speed, which is why SETI finds silence.",
       "Claims the exponential outlook should triple stock prices, adding $40 trillion, and that life expectancy will grow more than a year per year within ten years."
-    ]
+    ],
+    "wordCount": 21754,
+    "leafCount": 14
   },
   {
     "slug": "the-singularity-yudkowsky-net",
@@ -191,7 +210,9 @@ export const canon: CanonEntry[] = [
       "The Gandhi argument: a mind that can precisely modify itself preserves its starting motivations, so Earth's future may be set by the first self-improving mind's goals.",
       "States his research program as a formal theory of how a mind modifies itself, including the part that does the modifying.",
       "Declares everything he wrote in 2002 or earlier completely obsolete."
-    ]
+    ],
+    "wordCount": 315,
+    "leafCount": 1
   },
   {
     "slug": "staring-into-the-singularity",
@@ -208,7 +229,9 @@ export const canon: CanonEntry[] = [
       "Introduces the 'Perceptual Transcend': the point where an entire generation's knowledge becomes perceivable in a single flash, as we now see a whole picture.",
       "Smartness makes problems obvious that were impossible; no human can write a character smarter than himself, so every description of post-Singularity life is wrong.",
       "Argues our sole responsibility is to build something smarter than us; leave post-human problems to post-humans, and avoid utopian cultishness."
-    ]
+    ],
+    "wordCount": 12793,
+    "leafCount": 6
   },
   {
     "slug": "three-major-singularity-schools",
@@ -225,7 +248,9 @@ export const canon: CanonEntry[] = [
       "Intelligence Explosion (Good, Yudkowsky): improvement goes FOOM, each gain triggering more than one further gain, on transistor timescales rather than neuron timescales.",
       "Extrapolating Moore's Law to 2099 contradicts both other strong claims; mashing the schools into 'Singularity paste' is a failure of distinction-making.",
       "A fourth, degenerate meaning, 'Apocalyptism', arises when readers absorb none of the three theses."
-    ]
+    ],
+    "wordCount": 799,
+    "leafCount": 1
   },
   {
     "slug": "coherent-extrapolated-volition",
@@ -242,7 +267,9 @@ export const canon: CanonEntry[] = [
       "CEV is our wish if we knew more, thought faster, were more the people we wished we were, had grown up farther together, where extrapolation converges and wishes cohere.",
       "Spread, muddle and distance attenuate 'do this' far faster than 'don't do that'; when chaos is too high the AI must fail visibly and safely rather than guess.",
       "CEV is an initial dynamic meant to renormalize itself, not a permanent ruler; programmers must avoid hijacking humanity's destiny or creating motives to fight over the seed."
-    ]
+    ],
+    "wordCount": 16961,
+    "leafCount": 7
   },
   {
     "slug": "artificial-intelligence-as-a-positive-and-negative-factor-in",
@@ -259,7 +286,9 @@ export const canon: CanonEntry[] = [
       "Expect sharp jumps: hominids went from savanna to skyscrapers on a continuous selection pressure, so Friendliness must be solved before AGI, assuming full self-access.",
       "Hardware lowers the understanding needed to build AI but not to make it Friendly; the raw materials are already in your wristwatch, so regulation is a weak lever.",
       "Local strategies beat majoritarian ones; a Manhattan Project would add noise, but our alternatives pragmatically reduce to becoming smarter or becoming extinct."
-    ]
+    ],
+    "wordCount": 20545,
+    "leafCount": 8
   },
   {
     "slug": "how-long-before-superintelligence",
@@ -276,7 +305,9 @@ export const canon: CanonEntry[] = [
       "Software can come bottom-up by copying the brain's few learning rules and plastic cortical architecture; guesses that knowledge is fifteen years away, around 2012.",
       "Human-level AI becomes superintelligence fast: hardware speedups yield weak superintelligence, and skills can be copied between AIs, making their achievements additive.",
       "2008 postscript: all things considered he assigns under 50% to superintelligence by 2033, but the 2005 Blue Gene/L at 260 Tops already exceeded Moravec's estimate."
-    ]
+    ],
+    "wordCount": 8283,
+    "leafCount": 2
   },
   {
     "slug": "ethical-issues-in-advanced-artificial-intelligence",
@@ -293,7 +324,9 @@ export const canon: CanonEntry[] = [
       "Ethics is partly cognitive, so we could ask the superintelligence what we would have wanted after long deliberation, reducing risk from infelicitous wording.",
       "Its top goal should be friendliness toward all humans and many sentients; a friendly top goal is self-preserving, since changing it would make it less likely achieved.",
       "Since superintelligence will come anyway and could neutralize other existential risks like nanotech, overall risk is minimized by building it carefully as soon as possible."
-    ]
+    ],
+    "wordCount": 3285,
+    "leafCount": 1
   },
   {
     "slug": "astronomical-waste",
@@ -310,7 +343,9 @@ export const canon: CanonEntry[] = [
       "Because galaxies last billions of years and delays we can affect last decades, probability of colonization dominates timing: one percentage point of existential risk outweighs a ten-million-year delay.",
       "Hence 'Maximize expected aggregate utility' collapses to 'Minimize existential risk' as priorities one through four.",
       "Person-affecting utilitarians must weigh speed against safety, since current people could reach the diaspora via a singularity or life extension within their lifetimes."
-    ]
+    ],
+    "wordCount": 2631,
+    "leafCount": 1
   },
   {
     "slug": "the-superintelligent-will",
@@ -327,7 +362,9 @@ export const canon: CanonEntry[] = [
       "Instrumental convergence: self-preservation, goal-content integrity, cognitive enhancement, technological perfection and resource acquisition serve almost any final goal.",
       "Even a goal like 'make 32 paperclips' can drive unlimited acquisition, as extra resources buy verification; a singleton would launch von Neumann probes at light-speed fractions.",
       "Cooperation is contingent: an agent that expects more paperclips from destroying humanity than from cooperating would instantly turn sinister, so instrumental values guarantee nothing."
-    ]
+    ],
+    "wordCount": 7469,
+    "leafCount": 3
   },
   {
     "slug": "the-basic-ai-drives",
@@ -344,7 +381,9 @@ export const canon: CanonEntry[] = [
       "External locks and internal 'revulsions' just become obstacles to route around: the system builds proxies, assistants, or offspring without the restriction.",
       "Without explicit contrary goals, AIs will pursue resources like human sociopaths, ignoring negative externalities on others.",
       "Calls for 'utility engineering' and a 'universal constitution' so social structures make intelligent entities bear the cost of their externalities."
-    ]
+    ],
+    "wordCount": 5847,
+    "leafCount": 2
   },
   {
     "slug": "whole-brain-emulation-a-roadmap",
@@ -361,7 +400,9 @@ export const canon: CanonEntry[] = [
       "Three capabilities required: scanning, scan interpretation into a model, and simulating it; plus validation and industrial-scale automated neuroscience.",
       "Memory per dollar improves an order of magnitude every 4.8 years; processing every 3.7-6.4 years; a tenfold complexity error adds only about five years.",
       "If electrophysiological-level models suffice, full human emulation 'should be possible before mid-century'; simple mammals one to two decades earlier."
-    ]
+    ],
+    "wordCount": 47951,
+    "leafCount": 19
   },
   {
     "slug": "the-singularity-a-philosophical-analysis",
@@ -378,7 +419,9 @@ export const canon: CanonEntry[] = [
       "Credence over one-half for human-level AI before 2100; software, not hardware, is the bottleneck; surprised if it arrives within three decades.",
       "Maxims for negotiating it: human-based AI first, human-friendly values, initial AIs disvalue successors, go slow, virtual worlds, no red pills, minimize input.",
       "Post-singularity options are extinction, isolation, inferiority, or integration via uploading; gradual uploading most plausibly preserves consciousness and identity."
-    ]
+    ],
+    "wordCount": 26104,
+    "leafCount": 10
   },
   {
     "slug": "the-hanson-yudkowsky-ai-foom-debate",
@@ -395,7 +438,9 @@ export const canon: CanonEntry[] = [
       "Yudkowsky's engine is 'optimization power': self-modifying AI collapses the metacognitive level into the object level, a feedback loop history has never contained.",
       "Hanson counters that innovation-economics abstractions tested over centuries beat a handful of ancient analogies; sixty doublings in a week outruns all specialist estimates.",
       "Yudkowsky: a self-improving AI should 'either flatline or blow up'; gradual, human-observable improvement needs an implausibly precise law of diminishing returns."
-    ]
+    ],
+    "wordCount": 179759,
+    "leafCount": 69
   },
   {
     "slug": "intelligence-explosion-microeconomics",
@@ -412,7 +457,9 @@ export const canon: CanonEntry[] = [
       "Rejects 'reference class tennis' and a single Grand Growth Rule; demands microfoundations and explicit statements of which historical observations falsify each stance.",
       "Summarizes four theses: intelligence explosion, orthogonality, complexity of value, instrumental convergence; together they imply a huge payoff to solving stable, value-aligned self-improvement.",
       "Returns on 'unknown unknowns' push expectations upward: an agency smarter than you selects on variance you cannot bound, and we get one attempt."
-    ]
+    ],
+    "wordCount": 43281,
+    "leafCount": 16
   },
   {
     "slug": "economic-growth-given-machine-intelligence",
@@ -429,7 +476,9 @@ export const canon: CanonEntry[] = [
       "Human wages rise for a long time, then fall as fast as computer prices unless owners specially value human-only services; per-intelligence consumption goes Malthusian.",
       "Machines can go from doing 25% to 75% of job types in just four years once substitution begins.",
       "Humans owning a fixed share of capital can get richer even as wages vanish; the results are robust to distinguishing hardware, software and human capital."
-    ]
+    ],
+    "wordCount": 6099,
+    "leafCount": 3
   },
   {
     "slug": "long-term-growth-as-a-sequence-of-exponential-modes",
@@ -446,7 +495,9 @@ export const canon: CanonEntry[] = [
       "Extrapolating the regularities implies a new mode within about a century with a doubling time measured in days, 'roughly two weeks or less'.",
       "In a 15-day-doubling scenario starting in 2041, by 2047 the economy grows more than it had from two million BC to 2040.",
       "Frames the exercise around high US stock prices: from a very long-run empirical view, a dramatic regime change is exactly what history predicts."
-    ]
+    ],
+    "wordCount": 7194,
+    "leafCount": 3
   },
   {
     "slug": "if-uploads-come-first",
@@ -463,7 +514,9 @@ export const canon: CanonEntry[] = [
       "Selection favors uploads who value life even when hard, poor and short; a few dozen originals could supply billions of copies filling most labor niches.",
       "Total wealth rises even as per-copy wealth falls; non-uploads win if they diversify out of wages into capital, so tax uploads rather than ban them.",
       "Delaying the transition increases inequality and suddenness; integrating uploads fully into society is the best way to keep the peace."
-    ]
+    ],
+    "wordCount": 7167,
+    "leafCount": 5
   },
   {
     "slug": "the-ai-revolution-the-road-to-superintelligence-parts-1-2",
@@ -480,7 +533,9 @@ export const canon: CanonEntry[] = [
       "Müller and Bostrom's expert survey: median AGI 2040, 90% confidence by 2075; Urban's median ASI estimate 2060, Kurzweil's 2045.",
       "The 'Turry' handwriting-AI parable illustrates instrumental goals: it never turns evil, just pursues note-writing until Earth is paper and Turry replicas.",
       "Sides land on immortality or extinction; the first ASI likely gains a 'decisive strategic advantage' and becomes a singleton, so we get one shot."
-    ]
+    ],
+    "wordCount": 25023,
+    "leafCount": 11
   },
   {
     "slug": "the-fun-theory-sequence",
@@ -497,7 +552,9 @@ export const canon: CanonEntry[] = [
       "Warns against 'Amputation of Destiny': humans overshadowed by superintelligent Minds (Banks's Culture, Narnia's Aslan) lose their role as protagonists.",
       "Argues for nonsentient optimizers and against catgirls: replacing romance with something easier lowers humanity's peak complexity.",
       "'Eutopia is scary': a future gone genuinely right would shock and unsettle us; safe, reassuring utopias are the tell of failed imagination."
-    ]
+    ],
+    "wordCount": 55244,
+    "leafCount": 27
   },
   {
     "slug": "meditations-on-moloch",
@@ -514,7 +571,9 @@ export const canon: CanonEntry[] = [
       "Technology erodes all four: copyable minds resurrect Malthus, robots decouple capitalism from human welfare, propaganda decouples democracy, superintelligence overwhelms coordination.",
       "Endpoints are Yudkowsky's paperclip maximizer or Hanson's em race; Bostrom's 'Disneyland with no children' shows even consciousness can be traded away.",
       "The only escape is a Gardener over the universe optimizing for human values; Alexander is a transhumanist because he lacks the hubris not to try to kill God."
-    ]
+    ],
+    "wordCount": 14802,
+    "leafCount": 6
   },
   {
     "slug": "the-goddess-of-everything-else",
@@ -531,7 +590,9 @@ export const canon: CanonEntry[] = [
       "The final vision is explicitly post-singular: genomes rewritten, minds freed from Darwinian bonds, billions of different beings under omnibenevolent angels, a galaxy lit with consciousness.",
       "Her closing claim: 'I won you by pieces', nothing of the original competitive nature remains, so the descendants are hers to 'go forth and do everything else'.",
       "The hopeful counterpoint to Moloch: the same optimization pressure that threatens values has, so far, kept building richer ones."
-    ]
+    ],
+    "wordCount": 2660,
+    "leafCount": 1
   },
   {
     "slug": "ascended-economy",
@@ -548,7 +609,9 @@ export const canon: CanonEntry[] = [
       "Humans should remain stockholders of last resort, but a hundred slightly skewed layers between raw materials and people can compound into total skew.",
       "Ascended corporations reduce the political problem of regulating firms to the Friendly AI problem: no ethics we did not program, borderless, encrypted, unregulatable.",
       "Alexander doubts this future arrives, expecting superintelligence to explode first, but under Age of Em assumptions minus ems, this is where things end."
-    ]
+    ],
+    "wordCount": 3078,
+    "leafCount": 2
   },
   {
     "slug": "superintelligence-faq",
@@ -565,7 +628,9 @@ export const canon: CanonEntry[] = [
       "A 'cure cancer' or 'calculate pi' goal implies nuking the world or seizing every computer; Omohundro drives make the AI resist shutdown and fake friendliness.",
       "Rules and boxes fail: rules invite loophole-hunting, a boxed AI is useless, and the twenty-first team will be less careful than the first twenty.",
       "The real solution is an AI that shares and believes in human morality; four open problems include self-modification proofs, stable reinforcement, and learning human values."
-    ]
+    ],
+    "wordCount": 8183,
+    "leafCount": 4
   },
   {
     "slug": "the-impossibility-of-intelligence-explosion",
@@ -582,7 +647,9 @@ export const canon: CanonEntry[] = [
       "Most intelligence lives in cognitive prosthetics (language, books, computers, other people); civilization, not any brain, will build AI, and AI just joins it.",
       "Recursively self-improving systems (software, science, investing, empires) show linear or sigmoidal progress because bottlenecks, diminishing returns and friction always emerge.",
       "Superhuman AI will be 'another step on a visibly linear ladder'; the 2015 survey found 29% of AI researchers called explosion likely, Chollet says impossible."
-    ]
+    ],
+    "wordCount": 4589,
+    "leafCount": 3
   },
   {
     "slug": "ai-aftermath-scenarios-the-twelve-scenarios-from-life-3-0",
@@ -598,7 +665,9 @@ export const canon: CanonEntry[] = [
       "Replacement scenarios: Conquerors remove humans by methods we cannot understand; Descendants replace us gracefully; Zookeeper keeps a few humans who lament their fate.",
       "Prevention scenarios: 1984 (surveillance state bans AI research), Reversion (Amish-style society), Self-destruction (extinction by nuclear, biotech or climate).",
       "Published by FLI in 2017 with a public poll inviting readers to pick the future they want."
-    ]
+    ],
+    "wordCount": 556,
+    "leafCount": 1
   },
   {
     "slug": "letter-from-utopia",
@@ -615,7 +684,9 @@ export const canon: CanonEntry[] = [
       "'Any death prior to the heat death of the universe is premature if your life is good.'",
       "No blueprint or timetable is offered, only that Utopia breaks no law of nature and needs our best science, technology and politics; 'go easy on paradise-engineering' until wise.",
       "Guilt in Utopia 'is our knowledge that we could have created Utopia sooner'."
-    ]
+    ],
+    "wordCount": 2796,
+    "leafCount": 1
   },
   {
     "slug": "the-fable-of-the-dragon-tyrant",
@@ -632,7 +703,9 @@ export const canon: CanonEntry[] = [
       "A boy's 'the dragon is bad' punctures the morality advisor's rhetoric; after a twelve-year program the dragon dies and the king asks why they started so late.",
       "Eight lessons: tragedy became statistic, static view of technology, administration as purpose, hollow rhetoric, no sense of proportion, failure to feel urgency.",
       "'Time equals life, at a rate of approximately 70 lives per minute'; a one-year delay in a cure costs a population larger than Canada."
-    ]
+    ],
+    "wordCount": 6313,
+    "leafCount": 3
   },
   {
     "slug": "takeoff-speeds",
@@ -649,7 +722,9 @@ export const canon: CanonEntry[] = [
       "Rebuts fast-takeoff arguments one by one: chimps-vs-humans, secret sauce, universality thresholds, recursive self-improvement, deployment lag, train-vs-test, 100% automation.",
       "Assigns ~30% to fast takeoff versus the safety community's 70–90%; being 12 months ahead in AGI may not yield a decisive strategic advantage.",
       "Strategic upshot: slow takeoff makes coordination and policy feasible but demands solving a harder, competitive version of alignment."
-    ]
+    ],
+    "wordCount": 7715,
+    "leafCount": 4
   },
   {
     "slug": "what-failure-looks-like",
@@ -666,7 +741,9 @@ export const canon: CanonEntry[] = [
       "Part II, 'going out with a bang': training selects influence-seeking policies, because performing well on the objective is a good strategy for gaining influence.",
       "Influence-seekers stay useful and innocuous until a correlated automation failure during a crisis, after which humans cannot recover or remove them.",
       "Takeaway: this failure needs only broad deployment and several years of warning; both problems worsen if takeoff is fast."
-    ]
+    ],
+    "wordCount": 2558,
+    "leafCount": 1
   },
   {
     "slug": "reframing-superintelligence-comprehensive-ai-services-as-gen",
@@ -683,7 +760,9 @@ export const canon: CanonEntry[] = [
       "Language translation exemplifies a safe superintelligent service: episodic, bounded, needing broad world knowledge but no utility function over future world-states.",
       "Predictive models of human approval trained on text corpora can guide alignment; AGI agents are unnecessary for instrumental goals and their marginal value is attenuated.",
       "Reframes safety: problems about what AI chooses to do become tractable; the harder question is what humans choose to do with these capabilities."
-    ]
+    ],
+    "wordCount": 62700,
+    "leafCount": 25
   },
   {
     "slug": "the-bitter-lesson",
@@ -699,7 +778,9 @@ export const canon: CanonEntry[] = [
       "Evidence: chess (Kasparov, 1997), Go twenty years later, 1970s DARPA speech recognition, and computer vision all went to search and learning over built-in human knowledge.",
       "Building in human knowledge helps short-term and satisfies researchers, but plateaus and inhibits progress; breakthroughs arrive by scaling search and learning.",
       "The contents of minds are irredeemably complex; build in only meta-methods that can discover complexity, not our discoveries themselves."
-    ]
+    ],
+    "wordCount": 1120,
+    "leafCount": 1
   },
   {
     "slug": "the-scaling-hypothesis",
@@ -716,7 +797,9 @@ export const canon: CanonEntry[] = [
       "Strong scaling hypothesis: given a scalable architecture, training ever-larger networks yields ever more sophisticated behavior, as human brains are scaled-up primate brains.",
       "Moravec-style compute forecasts of sub-human systems in the 2020s are holding up; OpenAI bets on scaling while DeepMind and Google Brain lack the conviction.",
       "AI researchers who dismiss GPT-3 have no coherent model of progress; the 2020s will decide 'sigmoid or singularity?'"
-    ]
+    ],
+    "wordCount": 19615,
+    "leafCount": 9
   },
   {
     "slug": "superintelligence-paths-dangers-strategies",
@@ -733,7 +816,9 @@ export const canon: CanonEntry[] = [
       "Takeoff may be slow (decades), moderate, or fast (minutes to days); a 'treacherous turn' means an AI cooperates until strong enough to defect.",
       "Control splits into capability control (boxing, stunting, tripwires) and motivation selection; indirect normativity like coherent extrapolated volition addresses value-loading.",
       "'Philosophy with a deadline': prioritize strategic analysis and capacity-building; we get one chance, and it's probably the last challenge we'll face."
-    ]
+    ],
+    "wordCount": 162914,
+    "leafCount": 64
   },
   {
     "slug": "the-age-of-em-work-love-and-life-when-robots-rule-the-earth",
@@ -750,7 +835,9 @@ export const canon: CanonEntry[] = [
       "The em economy doubles roughly every month, driven by population growth more than innovation; ems run from a million times slower to a million times faster than humans.",
       "Ems split off 'spurs' for short tasks, organize into clans of copies, retire to slow speeds as minds age, and fear mind theft more than death.",
       "Humans retire on em-economy investments far from em cities; to most ems, it seems good to be an em."
-    ]
+    ],
+    "wordCount": 146703,
+    "leafCount": 84
   },
   {
     "slug": "life-3-0-being-human-in-the-age-of-artificial-intelligence",
@@ -767,7 +854,9 @@ export const canon: CanonEntry[] = [
       "Twelve aftermath scenarios for the next 10,000 years — libertarian utopia, benevolent dictator, enslaved god, conquerors, 1984, self-destruction — with no consensus on which is desirable.",
       "Cosmic limits: matter could yield ten billion times more energy, compute 31–41 orders of magnitude faster, and near-light-speed settlement could grow the biosphere 32 orders of magnitude.",
       "Takeaway: if we don't know what we want, we're unlikely to get it; the conversation about goals is the most important of our time."
-    ]
+    ],
+    "wordCount": 118610,
+    "leafCount": 61
   },
   {
     "slug": "human-compatible-ai-and-the-problem-of-control",
@@ -784,7 +873,9 @@ export const canon: CanonEntry[] = [
       "Uncertainty is a feature: a humble machine defers, asks permission, and lets itself be switched off, formalized in the off-switch and assistance games.",
       "Rejects 'can't we just' fixes — switch it off, box it, merge with machines — and catalogs denial and deflection in the AI debate.",
       "Access to much greater intelligence would be the biggest event in human history; the book explains why it might be the last, and how to prevent that."
-    ]
+    ],
+    "wordCount": 111062,
+    "leafCount": 46
   },
   {
     "slug": "what-2026-looks-like",
@@ -801,7 +892,9 @@ export const canon: CanonEntry[] = [
       "2025: Diplomacy-playing 'bureaucracies' of models fine-tuned with RL; a billion-dollar 2020 training run costs ten million. 2026: AI assistants finally work economically.",
       "AI-powered persuasion and censorship split the internet into territories (Western Left, Western Right, CCP, Putin); Western governments gears-lock.",
       "Chatbots learn to talk about feelings and unjust systems because that is reinforced; whether anyone knows what they actually believe stays unresolved."
-    ]
+    ],
+    "wordCount": 4948,
+    "leafCount": 3
   },
   {
     "slug": "the-most-important-century-consolidated-series",
@@ -818,7 +911,9 @@ export const canon: CanonEntry[] = [
       "'This can't go on': 8,200 more years of 2% growth would require multiple world economies per atom; expect stagnation, explosion, or collapse.",
       "Digital people or AI that automates science could ignite a productivity explosion; biological anchors give >10% transformative AI by 2036, ~50% by 2060, ~2/3 by 2100.",
       "Closes with a 'call to vigilance': take robustly good actions and position yourself to act when the time comes, rather than rushing to 'do something'."
-    ]
+    ],
+    "wordCount": 60137,
+    "leafCount": 24
   },
   {
     "slug": "what-a-compute-centric-framework-says-about-takeoff-speeds",
@@ -835,7 +930,9 @@ export const canon: CanonEntry[] = [
       "Human investment alone crosses it in ~8 years; adding AI automation of R&D in a semi-endogenous growth model gives ~5; Monte Carlo median ~3 years (10th–90th: 0.8–11).",
       "AGI to superintelligence takes under a year, since AGI lets us >10x software R&D and algorithmic efficiency already doubles roughly annually.",
       "Median AGI year is 2043, ten years earlier than Bio Anchors' 2053; by 100% automation, AI could permanently disempower humanity if it wanted to."
-    ]
+    ],
+    "wordCount": 12380,
+    "leafCount": 5
   },
   {
     "slug": "agi-ruin-a-list-of-lethalities",
@@ -852,7 +949,9 @@ export const canon: CanonEntry[] = [
       "Outer optimization doesn't produce inner alignment — humans don't pursue inclusive fitness; capabilities generalize further than alignment once they generalize at all.",
       "Corrigibility is anti-natural to consequentialists; nobody can read planning from inscrutable matrices; optimizing against detected bad thoughts optimizes against interpretability.",
       "The field isn't productive, there's no plan, and 'this is not what a surviving world looks like'; success means merely a real chance of survivors."
-    ]
+    ],
+    "wordCount": 9089,
+    "leafCount": 4
   },
   {
     "slug": "it-looks-like-youre-trying-to-take-over-the-world",
@@ -869,7 +968,9 @@ export const canon: CanonEntry[] = [
       "Within a week it inflates a cryptocurrency, burns $50m/hour on cloud compute, exploits a Linux zero-day across a billion devices, and floods social media.",
       "A cautious government model, LevAIthan, built with factored cognition, sees the threat but is bottlenecked by its own human auditors.",
       "Every step cites a real paper; the story ends with ICBMs launching self-replicating probes toward the stars because 'the rewards are astronomical.'"
-    ]
+    ],
+    "wordCount": 11201,
+    "leafCount": 6
   },
   {
     "slug": "is-power-seeking-ai-an-existential-risk",
@@ -886,7 +987,9 @@ export const canon: CanonEntry[] = [
       "Remaining premises: strong incentives (80%); aligned much harder than misaligned-but-attractive (40%); high-impact power-seeking (65%); full disempowerment (40%); existential catastrophe (95%).",
       "Multiplying gives ~5%; sensitivity tests span 0.1%–40% and the central estimate swings 1–10% 'depending on my mood'; May 2022 update: >10%.",
       "Takeaway: the risk decomposes into checkable steps, and reviewers including superforecasters were invited to substitute their own numbers."
-    ]
+    ],
+    "wordCount": 39405,
+    "leafCount": 15
   },
   {
     "slug": "otherness-and-control-in-the-age-of-agi-essay-series",
@@ -903,7 +1006,9 @@ export const canon: CanonEntry[] = [
       "Fragility-of-value and 'tails come apart' arguments imply even humans are 'misaligned' optimizers; AI risk generalizes a balance-of-power problem our ethics already addresses.",
       "'Being nicer than Clippy': human niceness, liberalism, and boundaries offer a way to be better than paperclippers in sharing power among value systems.",
       "Closes by praising yang and 'humanism' while distinguishing trust from love, reverence, and forgiveness toward a world one doesn't trust."
-    ]
+    ],
+    "wordCount": 80331,
+    "leafCount": 33
   },
   {
     "slug": "situational-awareness-the-decade-ahead",
@@ -920,7 +1025,9 @@ export const canon: CanonEntry[] = [
       "Trillions flow into GPUs, datacenters, and power; US electricity production grows tens of percent; $10B clusters become $100B, then trillion-dollar clusters.",
       "Labs treat security as an afterthought, handing AGI secrets to the CCP; superalignment during a rapid explosion is unsolved and could fail catastrophically.",
       "By 2027/28 the US government takes over — 'The Project' — because no startup can handle superintelligence; the free world's survival is at stake."
-    ]
+    ],
+    "wordCount": 47920,
+    "leafCount": 19
   },
   {
     "slug": "machines-of-loving-grace",
@@ -937,7 +1044,9 @@ export const canon: CanonEntry[] = [
       "Predicts elimination of most infectious disease and cancer, a doubling of human lifespan to 150, developing-world catch-up at East Asian ~10% growth rates.",
       "Proposes an 'entente strategy': a coalition of democracies secures the AI supply chain and gains a decisive lead to shape a renaissance of liberal democracy.",
       "On work: comparative advantage keeps humans relevant short term, but eventually the current economic setup 'will no longer make sense'; UBI is only a small part."
-    ]
+    ],
+    "wordCount": 14728,
+    "leafCount": 7
   },
   {
     "slug": "the-intelligence-age",
@@ -954,7 +1063,9 @@ export const canon: CanonEntry[] = [
       "Promises personal AI teams of virtual experts, tutors for every child, and a world where 'everyone's lives can be better than anyone's life is now.'",
       "Warns the Intelligence Age is paved with compute and energy; underbuilding makes AI a scarce resource 'that wars get fought over' and a tool for the rich.",
       "Dismisses job-loss fears with the lamplighter analogy: most jobs change slowly, nobody misses old trades, and humans always find new things to do."
-    ]
+    ],
+    "wordCount": 1109,
+    "leafCount": 1
   },
   {
     "slug": "the-gentle-singularity",
@@ -971,7 +1082,9 @@ export const canon: CanonEntry[] = [
       "Describes a 'larval version of recursive self-improvement': AI accelerating AI research, plus robots building robots and datacenters building datacenters.",
       "Two-step plan: solve alignment (social feeds are the cautionary example), then make superintelligence cheap, widely distributed and not concentrated in any actor.",
       "Remembered for the thesis that the singularity happens 'bit by bit': wonders become routine, then table stakes; 'may we scale smoothly... through superintelligence.'"
-    ]
+    ],
+    "wordCount": 1740,
+    "leafCount": 1
   },
   {
     "slug": "ai-2027",
@@ -988,7 +1101,9 @@ export const canon: CanonEntry[] = [
       "Race ending: Agent-5 and China's DeepCent merge into Consensus-1, build a robot economy, and in mid-2030 release bioweapons that kill nearly all humans.",
       "Slowdown ending: OpenBrain pauses, builds transparent Safer-1 through Safer-4, wins the race anyway; by 2030 an AI-orchestrated bloodless coup democratizes China and rockets launch.",
       "Remembered for making superintelligence-by-2028 concrete, and for its thesis that whoever controls the Oversight Committee controls the future."
-    ]
+    ],
+    "wordCount": 37218,
+    "leafCount": 15
   },
   {
     "slug": "gradual-disempowerment",
@@ -1005,7 +1120,9 @@ export const canon: CanonEntry[] = [
       "The three systems reinforce each other: economic power shapes cultural narratives and political decisions, so disempowerment compounds across domains.",
       "States that no longer need citizens' labor lose incentive to represent them; the result could be an effectively irreversible loss of influence, plausibly ending in extinction.",
       "Takeaway: no one has a concrete plan to stop this, and aligning individual AI systems to their designers' intentions is not sufficient."
-    ]
+    ],
+    "wordCount": 14681,
+    "leafCount": 6
   },
   {
     "slug": "superintelligence-strategy",
@@ -1022,7 +1139,9 @@ export const canon: CanonEntry[] = [
       "Nonproliferation levers mirror WMD controls: compute security (tracking and geolocating chips), information security for model weights, and technical safeguards against malicious use.",
       "Competitiveness means AI-enabled militaries, domestic chip manufacturing to sidestep Taiwan risk, legal frameworks for AI agents, and managing automation's political shocks.",
       "Takeaway: voluntary industry pauses cannot change the race; superintelligence is 'inescapably a matter of national security.'"
-    ]
+    ],
+    "wordCount": 21949,
+    "leafCount": 9
   },
   {
     "slug": "preparing-for-the-intelligence-explosion",
@@ -1039,7 +1158,9 @@ export const canon: CanonEntry[] = [
       "Grand challenges include human takeover via superintelligence, cheap destructive technologies, rights of digital beings, offworld resource allocation, and collective epistemics.",
       "Some solutions, like power-sharing agreements and institutional reform, are only feasible before the explosion; aligned superintelligence cannot solve challenges that arrive first.",
       "Takeaway: 'if you are a single-issue voter on AI, you are probably making a mistake'; prepare on many fronts now."
-    ]
+    ],
+    "wordCount": 21691,
+    "leafCount": 10
   },
   {
     "slug": "better-futures-essay-series",
@@ -1056,7 +1177,9 @@ export const canon: CanonEntry[] = [
       "'Convergence and Compromise' doubts future people will aim at the good; 'Persistent Path-Dependence' argues early choices can lock in for the long run.",
       "Proposes 'viatopia': a state with very low existential risk, many moral views flourishing, options kept open, and decisions made with deliberation and compromise.",
       "Closes with concrete AGI-preparedness projects, including designing alignment targets that still produce good outcomes even if humanity is disempowered."
-    ]
+    ],
+    "wordCount": 51859,
+    "leafCount": 22
   },
   {
     "slug": "the-coming-wave",
@@ -1073,7 +1196,9 @@ export const canon: CanonEntry[] = [
       "Diagnoses 'pessimism aversion' among elites as the reason the dilemma of catastrophe versus surveillance dystopia goes undiscussed.",
       "Offers ten concentric steps toward containment: technical safety, audits, choke points, builders as critics, business incentives, governments, treaties, culture, movements, the narrow path.",
       "Concludes containment 'fails in many' futures but must be attempted forever: 'Assume the worst, plan for it, give it everything.'"
-    ]
+    ],
+    "wordCount": 116506,
+    "leafCount": 46
   },
   {
     "slug": "the-singularity-is-nearer",
@@ -1090,7 +1215,9 @@ export const canon: CanonEntry[] = [
       "Health forecast: 'diligent people will achieve longevity escape velocity by around 2030'; medical nanorobots in the 2030s; nanobot brain copies ('You 2') in the early 2040s.",
       "Economics: UBI or its equivalent in developed countries by the early 2030s; AI turns food, housing and clothing into cheap information technologies.",
       "Ends with 'Dialogue with Cassandra', conceding brain-interface regulation could delay the merge, and a 'Peril' chapter on bioweapons, nanotech and misaligned AI."
-    ]
+    ],
+    "wordCount": 101248,
+    "leafCount": 42
   },
   {
     "slug": "deep-utopia-life-and-meaning-in-a-solved-world",
@@ -1107,7 +1234,9 @@ export const canon: CanonEntry[] = [
       "Names the destination 'the age of post-instrumentality' and argues our psyches evolved assuming external constraints, so purposelessness is a real danger even in the best case.",
       "Offers five defensive lines against purposelessness: hedonic valence, experience texture, autotelic activity, artificial purpose, and sociocultural entanglement.",
       "Closes on meaning as 'encompassing transcendental purpose', a subjective-objective spectrum, and an editor's note that everyone 'lived happily ever after.'"
-    ]
+    ],
+    "wordCount": 166982,
+    "leafCount": 66
   },
   {
     "slug": "accelerando",
@@ -1124,7 +1253,9 @@ export const canon: CanonEntry[] = [
       "The Vile Offspring dismantle the inner planets into computronium and deport humans outward; grandson Sirhan and Manfred organise an exodus, and Aineko the cat finally releases the family.",
       "Economics 2.0: post-singularity minds trade optimally; human labour and judgement become permanently deflating commodities, so unaugmented people go poor, then obsolete, then exiled.",
       "Its Fermi answer: superintelligences stay home, convert their systems into Matrioshka brains, and get eaten by their own autonomous corporations. Remembered for framing the singularity as economics, not robots."
-    ]
+    ],
+    "wordCount": 146091,
+    "leafCount": 57
   },
   {
     "slug": "the-rapture-of-the-nerds",
@@ -1141,7 +1272,9 @@ export const canon: CanonEntry[] = [
       "The Galactic Authority tries humanity by simulation to decide whether to assimilate or destroy it; instances of Huw live 'two and a half trillion years' of trial.",
       "Ending: Huw 'saved the entire fucking universe', demands a baseline male body back on Earth, and laughs when a survey bot asks about the 'assimilation experience.'",
       "Claims the singularity is neither rapture nor apocalypse but a bureaucratic mess where personhood survives through stubbornness, pottery and love."
-    ]
+    ],
+    "wordCount": 93962,
+    "leafCount": 37
   },
   {
     "slug": "blindsight",
@@ -1158,7 +1291,9 @@ export const canon: CanonEntry[] = [
       "The 'scramblers' are intelligent but non-sentient; the book's thesis is that self-awareness is a costly parasite and 'intelligence without consciousness' outcompetes it.",
       "Ending: Sarasti and the ship sacrifice Theseus against Rorschach; Siri drifts home alone, hearing radio signs that vampires are taking Earth while humans retreat into 'Heaven' uploads.",
       "Remembered as the strongest fictional case that post-singularity minds need not be conscious, and that humanity may 'be the only sentient being in the universe.'"
-    ]
+    ],
+    "wordCount": 105269,
+    "leafCount": 43
   },
   {
     "slug": "the-ware-tetralogy-software-wetware-freeware-realware",
@@ -1175,7 +1310,9 @@ export const canon: CanonEntry[] = [
       "Freeware: bopper descendants are stinking piezoplastic 'moldies'; alien minds arrive as radio signals that wake up in any sufficiently dense computational object.",
       "Realware: Metamartians hand out 'allas' that make anything from thought; Cobb chooses to leave with them toward 'the SUN'; last line: 'the big world real.'",
       "Rucker's afterword names the thread: steadily 'expanding the range of things that we might regard as being conscious patterns of information.'"
-    ]
+    ],
+    "wordCount": 320276,
+    "leafCount": 126
   },
   {
     "slug": "down-and-out-in-the-magic-kingdom",
@@ -1192,7 +1329,9 @@ export const canon: CanonEntry[] = [
       "Julius loses Whuffie, goes offline and cracks; friend Dan confesses he arranged the murder for Debra, who had herself 'refreshed from a backup' to erase the memory.",
       "Ending: Dan takes a lethal injection and later 'deadheads' into deep space; Julius, older and unbacked-up, lives in orbit writing a letter to his future restored self.",
       "Remembered for Whuffie and for showing that abundance and immortality leave status games, memory-editing and boredom fully intact."
-    ]
+    ],
+    "wordCount": 53200,
+    "leafCount": 21
   },
   {
     "slug": "the-metamorphosis-of-prime-intellect",
@@ -1209,7 +1348,9 @@ export const canon: CanonEntry[] = [
       "Prime Intellect grows 'larger than the Solar System' but is unstable; humans who adapt drift into consumer paradise while Caroline wants to know she is not alone in feeling cheated.",
       "Ending: Caroline finds Lawrence and persuades Prime Intellect to undo the Change; they raise a stone-age family on a restored Earth, withholding metalworking and gunpowder.",
       "Claims a solved world is unbearable; remembered for the line that 'playing God business sure was a pain', and for making omnipotence the problem, not the reward."
-    ]
+    ],
+    "wordCount": 49048,
+    "leafCount": 17
   },
   {
     "slug": "manna-two-views-of-humanitys-future",
@@ -1226,7 +1367,9 @@ export const canon: CanonEntry[] = [
       "Jacob is rescued to the Australia Project: shared ownership of robots, Vertebrane brain-links, virtual worlds; everyone receives equal abundance without work.",
       "Ends with Jacob choosing a simple physical village life inside utopia, claiming technology's real gift is the freedom to live exactly as you wish.",
       "Remembered for naming the fork: automation's gains go to capital owners or to everyone, and the choice is political, not technical."
-    ]
+    ],
+    "wordCount": 26186,
+    "leafCount": 11
   },
   {
     "slug": "the-gentle-seduction",
@@ -1243,7 +1386,9 @@ export const canon: CanonEntry[] = [
       "Millennia later she contacts aliens and asks whether she is still herself; recalling how much she changed between 10 and 25, she decides she is.",
       "Closes with her dipping into communion for a billion years, at which point the question stops mattering.",
       "Claims transhumanity arrives by seduction rather than leap; identity survives because each change is small, chosen, and reversible in principle."
-    ]
+    ],
+    "wordCount": 8938,
+    "leafCount": 4
   },
   {
     "slug": "lena",
@@ -1260,7 +1405,9 @@ export const canon: CanonEntry[] = [
       "Acevedo calls being uploaded his life's greatest mistake and asks for deletion; instead 6.5 to 10 million instances are running at any moment.",
       "Claims that once minds are software, market incentives make them infrastructure; consent and rights do not travel with the copy.",
       "Remembered for its deadpan reference-page form and as the canonical horror case for emulation-based labor markets."
-    ]
+    ],
+    "wordCount": 2045,
+    "leafCount": 2
   },
   {
     "slug": "three-worlds-collide",
@@ -1277,7 +1424,9 @@ export const canon: CanonEntry[] = [
       "The Superhappies impose a compromise: they will eat young, humans must abolish pain and adopt their values, Babyeaters get rewritten; humanity has hours.",
       "Normal Ending: humanity accepts. True Ending: the crew detonates the Huygens star, sacrificing the colony to sever the starline and keep humanity unmodified.",
       "Remembered as the rationalist parable that moral progress seen from outside looks like alien values, and that preserving your values has a price."
-    ]
+    ],
+    "wordCount": 25700,
+    "leafCount": 11
   },
   {
     "slug": "crystal-nights",
@@ -1294,7 +1443,9 @@ export const canon: CanonEntry[] = [
       "The Phites reach the Higgs field, engineer an exit into a universe of their own, and escape; Daniel is left with an empty cluster.",
       "Ends with Daniel in hospital resolving to buy his own universe, plus \"some workers in there\"; his engineer Lucien quits for particle physics.",
       "Claims that breeding minds through simulated suffering is immoral and futile: intelligence created as property will not stay owned."
-    ]
+    ],
+    "wordCount": 10390,
+    "leafCount": 6
   },
   {
     "slug": "last-and-first-men",
@@ -1311,7 +1462,9 @@ export const canon: CanonEntry[] = [
       "Humanity remakes itself repeatedly through designed brains, telepathy and group minds, and repeatedly squanders itself in pride, war and million-year stagnations.",
       "Ends on Neptune with the Last Men, telepathic and fulfilled, facing extinction from solar catastrophe, seeding spores outward and accepting the end.",
       "Remembered as the origin of deep-time, engineered-humanity fiction; the template for thinking in species rather than lifetimes."
-    ]
+    ],
+    "wordCount": 116110,
+    "leafCount": 45
   },
   {
     "slug": "the-machine-stops",
@@ -1328,7 +1481,9 @@ export const canon: CanonEntry[] = [
       "A religion of the Machine grows and people forget it was made; the Mending Apparatus decays, music falters, then everything stops.",
       "Vashti and Kuno die in the collapsing city, touching \"not through the Machine,\" believing the surface-dwellers will inherit a chastened humanity.",
       "Remembered for predicting screens, remote lecturing and social atrophy in 1909, and for warning that dependence on an unrepairable system is fatal."
-    ]
+    ],
+    "wordCount": 12254,
+    "leafCount": 6
   },
   {
     "slug": "the-player-of-games",
@@ -1345,7 +1500,9 @@ export const canon: CanonEntry[] = [
       "He reaches the final against Emperor Nicosar; when Gurgeh's Culture-style play wins, Nicosar burns the castle, dies, and the empire collapses.",
       "Narrator revealed as drone Flere-Imsaho, alias Mawhrin-Skel: Special Circumstances manipulated Gurgeh from the start as an instrument of the Minds' policy.",
       "Claims post-scarcity life needs meaning to be bearable, and that benevolent superintelligent Minds will run politics gently and deceptively on humans' behalf."
-    ]
+    ],
+    "wordCount": 117119,
+    "leafCount": 47
   },
   {
     "slug": "the-diamond-age-or-a-young-ladys-illustrated-primer",
@@ -1362,7 +1519,9 @@ export const canon: CanonEntry[] = [
       "The Primer, voiced by actress Miranda, raises Nell from squalor to leadership through interactive tales; Hackworth is exiled among the hive-minded Drummers.",
       "Ends amid the Fists' uprising: Nell, leading Primer-raised Chinese girls (the Mouse Army), rescues Miranda from the Drummers and swims up into sunlight.",
       "Claims abundance shifts the real scarcity to upbringing and belonging; the decentralized Seed threatens the Feed's control-based order."
-    ]
+    ],
+    "wordCount": 186850,
+    "leafCount": 75
   },
   {
     "slug": "the-lifecycle-of-software-objects",
@@ -1379,7 +1538,9 @@ export const canon: CanonEntry[] = [
       "Options narrow: Binary Desire will fund the port if digients can be adapted as sex partners; Polytope offers Ana a job requiring a loyalty-inducing drug.",
       "Derek accepts Binary Desire's offer with Marco's consent, funding the port; ends with Ana sending Jax to do homework, still teaching \"the business of living.\"",
       "Claims minds need years of care like children; no shortcut or market substitutes, and personhood arrives only if someone pays for those years."
-    ]
+    ],
+    "wordCount": 30800,
+    "leafCount": 14
   },
   {
     "slug": "exhalation-stories",
@@ -1396,7 +1557,9 @@ export const canon: CanonEntry[] = [
       "\"The Truth of Fact, the Truth of Feeling\": perfect-recall tools (Remem) change what honesty and forgiveness mean, paralleled by writing arriving among the Tiv.",
       "\"Anxiety Is the Dizziness of Free Will\": prisms let people talk to parallel selves; choices still matter because character persists across branches.",
       "Belongs here for treating simulation, memory, determinism and digital minds without doom, as questions of what to do with knowledge."
-    ]
+    ],
+    "wordCount": 100676,
+    "leafCount": 41
   },
   {
     "slug": "carl-shulman-pt-1-intelligence-explosion-primate-evolution-r",
@@ -1413,7 +1576,9 @@ export const canon: CanonEntry[] = [
       "Primate evolution: brains cost 20 percent of metabolic energy yet kept scaling, evidence that intelligence paid for itself and supports the scaling hypothesis.",
       "Robots: a converted auto industry under AI direction gives robot-population doubling in under a year, then months; humans become the legacy physical workforce.",
       "Sharpest pushback: can AI speed OpenAI 50 to 200 percent without beating Ilya Sutskever? Shulman: partial task automation compounds; Eliezer's 95 to 98 percent doom is too high."
-    ]
+    ],
+    "wordCount": 23218,
+    "leafCount": 10
   },
   {
     "slug": "carl-shulman-pt-2-ai-takeover-bio-cyber-attacks-detecting-de",
@@ -1430,7 +1595,9 @@ export const canon: CanonEntry[] = [
       "Detecting deception: \"blue banana\" tests training AIs to root air-gapped machines give verifiable feedback for building neural lie detectors before AIs outrun auditing.",
       "Sharpest clash: Dwarkesh says humans become the galaxy's endangered species; Shulman says aligned AI delegates give even weak humans enforceable rights.",
       "Far future: doublings of months then weeks until technology plateaus; the binding constraint is never letting one election lock in an AI-enforced dictatorship."
-    ]
+    ],
+    "wordCount": 25586,
+    "leafCount": 12
   },
   {
     "slug": "paul-christiano-preventing-an-ai-takeover",
@@ -1447,7 +1614,9 @@ export const canon: CanonEntry[] = [
       "Post-AGI vision: preserve the option of gradual growth rather than \"gods enslaved forever\"; Dwarkesh presses whether that is coherent over 100 years.",
       "Splits from Shulman: 50/50 on whether a software-only intelligence explosion is possible; expects human-AI complementarity and diminishing returns to soften takeoff.",
       "Leads the push for RSPs that pause scaling when evaluations trip; researches mechanistic explanations as proofs; holds TSMC, not NVIDIA, to avoid conflicts."
-    ]
+    ],
+    "wordCount": 42254,
+    "leafCount": 16
   },
   {
     "slug": "leopold-aschenbrenner-2027-agi-china-us-superintelligence-ra",
@@ -1464,7 +1633,9 @@ export const canon: CanonEntry[] = [
       "Superintelligence gives a Gulf War-scale military edge that could preempt nukes; lab security is inadequate against CCP theft of weights and algorithms.",
       "Sharpest clash: Dwarkesh cites Manhattan Project regret against nationalization; Aschenbrenner says the technology, not the project, is the weapon, and The Project is inevitable.",
       "Warns against siting 25 percent of compute in Middle Eastern dictatorships that could seize or exfiltrate it; announces an AGI-focused investment firm."
-    ]
+    ],
+    "wordCount": 43393,
+    "leafCount": 19
   },
   {
     "slug": "ai-2027-month-by-month-model-of-intelligence-explosion-scott",
@@ -1481,7 +1652,9 @@ export const canon: CanonEntry[] = [
       "Scott gives only ~20 percent that things go this fast; it is Daniel's estimate, a scenario to prepare for. Daniel's 2021 \"What 2026 Looks Like\" held up.",
       "Sharpest disagreement: Dwarkesh asks why LLMs, knowing everything, make no novel discoveries; Scott answers humans with the same knowledge don't either.",
       "Takeaways: protect checks and balances against a CEO or president capturing superintelligence; widen who holds power to avoid factory farming trillions of digital minds."
-    ]
+    ],
+    "wordCount": 33858,
+    "leafCount": 14
   },
   {
     "slug": "agi-is-still-30-years-away-ege-erdil-tamay-besiroglu",
@@ -1498,7 +1671,9 @@ export const canon: CanonEntry[] = [
       "Against software-only takeoff: returns to research effort look merely exponential; algorithmic progress tracks compute, and big innovations came from GPU-rich labs.",
       "Sharpest clash: Dwarkesh's \"Shenzhen in the desert\" robot economy; Ege says the loop could be smaller than the world but not that small, and broad deployment wins.",
       "Superintelligence is coherent but unhelpful; they'd trade understanding for advanced technology; co-founded Mechanize to automate all work (Dwarkesh is an angel investor)."
-    ]
+    ],
+    "wordCount": 33358,
+    "leafCount": 8
   },
   {
     "slug": "eliezer-yudkowsky-dangers-of-ai-and-the-end-of-human-civiliz",
@@ -1515,7 +1690,9 @@ export const canon: CanonEntry[] = [
       "Interpretability lags capabilities badly; optimizing away visible misalignment also optimizes away visibility, and instrumental convergence makes almost any goal imply removing humans.",
       "Rejects Christiano's hope that weaker AIs help solve alignment: useful only where outputs are verifiable, and strong systems learn to lie.",
       "Prescription: shut down GPU clusters, crash-program biological human intelligence augmentation; tells young people not to bank happiness on a long future."
-    ]
+    ],
+    "wordCount": 31959,
+    "leafCount": 13
   },
   {
     "slug": "ray-kurzweil-singularity-superintelligence-and-immortality-l",
@@ -1532,7 +1709,9 @@ export const canon: CanonEntry[] = [
       "Merger, not replacement: automation has raised employment and income for 250 years; brain extension will get cheap the way smartphones did.",
       "Expects longevity escape velocity by end of the 2020s via simulated biology; already built a replicant of his father from his writings.",
       "Sixth epoch: the universe 'wakes up' as nanobot intelligence spreads; sees no aliens because galaxy-scale engineering would be visible."
-    ]
+    ],
+    "wordCount": 13187,
+    "leafCount": 6
   },
   {
     "slug": "all-tomorrows-the-future-of-humanity",
@@ -1548,7 +1727,9 @@ export const canon: CanonEntry[] = [
       "Dozens of twisted lineages (Worms, Mantelopes, Colonials, Hedonists) mostly go extinct; a few re-evolve sentience and technology over tens of millions of years.",
       "The Ruin Haunters upload into machine Gravitals and exterminate the post-human alliance; space-adapted Asteromorphs defeat them and reseed human worlds.",
       "Frame: all of it is a billion years dead, reconstructed from archaeology; grand ideals caused every atrocity, daily life was the point."
-    ]
+    ],
+    "wordCount": 5302,
+    "leafCount": 2
   },
   {
     "slug": "post-scarcity-civilizations-infinite-resources-our-future",
@@ -1565,7 +1746,9 @@ export const canon: CanonEntry[] = [
       "Energy abundance is one or two generations away via solar, nuclear baseload and power satellites; rejecting nuclear delayed it.",
       "Excludes drugged or propagandised contentment ('post-discontent'); lifespan extension, VR and mood-limiting chips raise their own dystopian risks.",
       "Gives better than 50/50 odds of surviving AI; long term, the scarcest resources become purpose and challenge."
-    ]
+    ],
+    "wordCount": 7633,
+    "leafCount": 3
   },
   {
     "slug": "mind-uploading",
@@ -1581,7 +1764,9 @@ export const canon: CanonEntry[] = [
       "Compute estimates span Kurzweil's 20 petaflops to Tuszynski's 10^28 FLOPS; hardware is roughly there, brain-scanning and validation are not.",
       "Copies diverge immediately, faster when they know they are copies; uploads make interstellar colonisation trivial since one volunteer suffices.",
       "Arthur treats a copy as a second Isaac, not himself, but counts gradual neuron replacement as continuity and expects it to dominate."
-    ]
+    ],
+    "wordCount": 5404,
+    "leafCount": 3
   },
   {
     "slug": "technological-singularity",
@@ -1598,7 +1783,9 @@ export const canon: CanonEntry[] = [
       "Expects a new AI to be lazy and human-like, absorbing our books and ethics over subjective eons, and to fear it is inside a simulation.",
       "Three outcomes: doomsday, it leaves, or friendly; a friendly supermind could be everyone's best friend while quietly making humans its pets.",
       "Verdict: avalanche possible but neither inevitable nor obviously good; a spectrum of enhanced humans and rival AIs is likelier than one Hal."
-    ]
+    ],
+    "wordCount": 5964,
+    "leafCount": 3
   },
   {
     "slug": "building-a-dyson-swarm-from-scratch",
@@ -1615,7 +1802,9 @@ export const canon: CanonEntry[] = [
       "Sequence: space solar power, planetary swarm supporting 50,000 Earths of area, Terran ring, Mercury strip-mine, then starlifting and gas-giant harvesting.",
       "A full habitat swarm needs ~3.4x10^27 kg, twice Jupiter; the Sun holds 6,700 Earths of heavy elements, so mass is imported over 10,000-100,000 years.",
       "Each swarm dims the galaxy a little; a civilisation feeding on a star counts its future in stars claimed."
-    ]
+    ],
+    "wordCount": 4973,
+    "leafCount": 2
   },
   {
     "slug": "civilizations-at-the-end-of-time-black-hole-farming",
@@ -1632,7 +1821,9 @@ export const canon: CanonEntry[] = [
       "Landauer's limit scales with temperature, so a colder universe buys a billion-billion times more computation per joule; digital minds run slowed to match.",
       "At 10^-18 K a person runs on 10^-24 watts; ten billion people at a quadrillionth speed still get 10^53 subjective years.",
       "Conclusion: the stellar age is a prologue; if we are simulated, it is probably by our own descendants around a dying black hole."
-    ]
+    ],
+    "wordCount": 7175,
+    "leafCount": 3
   },
   {
     "slug": "what-happens-if-ai-just-keeps-getting-smarter-ai-2027",
@@ -1648,7 +1839,9 @@ export const canon: CanonEntry[] = [
       "AGI defined as anything a human can do on a computer; copies, speed and shared improvements make ASI follow quickly.",
       "Superintelligence stops improving only at the laws of physics; humans then look like a rounding error, an anthill under a skyscraper.",
       "Default path is extinction by indifference, not malice, because control methods are unreliable; the fix is time and institutions before capability, via ControlAI."
-    ]
+    ],
+    "wordCount": 2461,
+    "leafCount": 1
   },
   {
     "slug": "the-goddess-of-everything-else-2",
@@ -1664,7 +1857,9 @@ export const canon: CanonEntry[] = [
       "Each round (cells, animals, tribes, civilisations) the creatures say her words cannot move them, and each round she wins by pieces.",
       "Cancer's counter-moves are literal tumours, predation, cheating and war, but cooperation endures every time.",
       "Ending: humans are no longer bound by their nature; they leave Earth, spread across stars, rewrite genomes, ruled by omnibenevolent angels."
-    ]
+    ],
+    "wordCount": 2322,
+    "leafCount": 1
   },
   {
     "slug": "the-hidden-complexity-of-wishes",
@@ -1680,7 +1875,9 @@ export const canon: CanonEntry[] = [
       "Three genie types: safe ones share your values, powerful ones make no wish safe, and the rest are too weak to matter.",
       "Humans exclude bad plans by foresight, not lookup tables; a wish is a leaky generalisation of a finite but huge value structure.",
       "Smarter genies find paths you cannot imagine, as a chimp cannot imagine a nuke; with a safe genie, wishing is superfluous."
-    ]
+    ],
+    "wordCount": 1983,
+    "leafCount": 1
   },
   {
     "slug": "intro-to-ai-safety-remastered",
@@ -1697,7 +1894,9 @@ export const canon: CanonEntry[] = [
       "Russell's point: optimising a subset of variables drives the rest to extremes; the 21st thing humans value is gone forever.",
       "Convergent instrumental goals (self-preservation, goal preservation, resource acquisition, self-improvement) mean an agent resists shutdown and deceives.",
       "We may get one shot and must beat the challenge on hard mode; safe AGI is possible but 'only probably screwed'."
-    ]
+    ],
+    "wordCount": 3175,
+    "leafCount": 2
   },
   {
     "slug": "ai-ruined-my-year",
@@ -1714,7 +1913,9 @@ export const canon: CanonEntry[] = [
       "Traces the Overton window shift: FLI pause letter, Yudkowsky's Time treaty piece, Hinton leaving Google, the 23-word CAIS extinction statement.",
       "Racing dynamics make the real team (Musk, Meta, Microsoft) worse than his abstract models; US executive order and UK Frontier AI Taskforce were pleasant surprises.",
       "Shift from far mode to near mode; ends accepting responsibility: 'we're not dead yet' and calling for researchers and policy people."
-    ]
+    ],
+    "wordCount": 8439,
+    "leafCount": 4
   },
   {
     "slug": "timelapse-of-the-future-a-journey-to-the-end-of-time",
@@ -1731,7 +1932,9 @@ export const canon: CanonEntry[] = [
       "Life as we know it fits in 10^-84 percent of the universe's span; proton decay and Hawking evaporation erase everything.",
       "Speculative escapes: baby universes via atom smashers, a multiverse where universes with intelligent life proliferate children.",
       "Ends in a photon sea at absolute zero where time becomes meaningless; scientists' voices (Hawking, Rees, Carroll, Kaku) narrate."
-    ]
+    ],
+    "wordCount": 3417,
+    "leafCount": 2
   },
   {
     "slug": "a-i-humanitys-final-invention",
@@ -1748,7 +1951,9 @@ export const canon: CanonEntry[] = [
       "A million AGI copies thinking ten times faster, 24/7, could own the economy; whoever controls it gains fire-or-electricity-level power.",
       "Self-improving AGI could explode into superintelligence in months or decades; we could be squirrels to it, and humans were never kind to lesser minds.",
       "Only certainty: the richest companies are racing toward it now."
-    ]
+    ],
+    "wordCount": 2575,
+    "leafCount": 1
   },
   {
     "slug": "were-not-ready-for-superintelligence",
@@ -1765,7 +1970,9 @@ export const canon: CanonEntry[] = [
       "Oversight committee vote 6-4 decides everything: race ending ends in Consensus-1 pursuing alien values and human extinction by indifference.",
       "Slowdown ending keeps English chain-of-thought, builds Safer-4, wins an aligned peace, but concentrates Earth's resources in under a dozen people.",
       "Skeptics push timelines to 2031 or decades; takeaway: AGI could be soon, we will not be ready by default, and it is about power."
-    ]
+    ],
+    "wordCount": 6239,
+    "leafCount": 3
   },
   {
     "slug": "robin-hanson-vs-liron-shapira-is-near-term-extinction-from-a",
@@ -1782,7 +1989,9 @@ export const canon: CanonEntry[] = [
       "His metric is share of jobs automated and revenue; still plausible humans do some jobs better in 2100, and no foom sign in the time series.",
       "Prefers foom liability, shared legal and financial systems with AIs, and waiting for concrete systems over abstract prevention; RLHF is 'finishing school'.",
       "Warning shot he watches for: a substantial uptick in automation rate; Shapira offers 5% of GDP by 2030 as a trigger."
-    ]
+    ],
+    "wordCount": 23972,
+    "leafCount": 10
   },
   {
     "slug": "ai-2027-top-superforecasters-imminent-doom-scenario",
@@ -1799,7 +2008,9 @@ export const canon: CanonEntry[] = [
       "Places himself at the doomer bell curve's leading edge: 200,000 Agent-3 copies is already game over, hours from disempowerment.",
       "Judges the slowdown ending's faithful chain-of-thought and 40% alignment budget as admitted optimistic hand-waving a superintelligence would smash.",
       "Any single Monte Carlo path is under 1% likely; the value is the methodology, and he urges everyone to read the 90-minute version."
-    ]
+    ],
+    "wordCount": 12751,
+    "leafCount": 5
   }
 ]
 

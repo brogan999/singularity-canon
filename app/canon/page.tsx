@@ -21,6 +21,7 @@ import {
   authorsCount,
   compiledFor,
   compiledOn,
+  hasBodies,
 } from "@/lib/canon-data"
 
 const numberBySlug = new Map(canon.map((e, i) => [e.slug, i + 1]))
@@ -114,6 +115,14 @@ export default function CanonContentsPage() {
             ariaLabel="Search the canon"
             caption={searching ? `${shown.length} ${shown.length === 1 ? "match" : "matches"}` : undefined}
           />
+          {searching && hasBodies ? (
+            <Link
+              href={`/canon/search?q=${encodeURIComponent(query.trim())}`}
+              className="mt-3 inline-block font-mono text-[0.65rem] uppercase tracking-wider text-gild transition-colors hover:text-instrument"
+            >
+              Search inside the texts →
+            </Link>
+          ) : null}
         </InstrumentPanel>
 
         <InstrumentPanel title="Lens">

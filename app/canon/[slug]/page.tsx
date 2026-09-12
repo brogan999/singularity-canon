@@ -11,6 +11,8 @@ import {
   Meter,
 } from "@/manuscript-ds"
 import { canon, entryBySlug, yearExtent } from "@/lib/canon-data"
+import { loadManifest, leafHref } from "@/lib/canon-body"
+import { BodyAbsentNote, LeafIndex } from "@/components/canon/reader"
 
 export function generateStaticParams() {
   return canon.map((e) => ({ slug: e.slug }))
@@ -30,12 +32,23 @@ export async function generateMetadata({
   }
 }
 
-function hostOf(url: string | null) {
-  if (!url) return null
+/**
+ * Provenance for an entry's `src`, which is not always a URL.
+ *
+ * Transcript entries carry protocol-less values ("youtube.com/watch?v=…") and
+ * the works read from Alex's own shelf carry "from your library". Passing
+ * either to new URL() throws, and rendering either as an href produced a
+ * relative link to nowhere — which silently broke all 24 transcript sources.
+ */
+function provenance(src: string | null): { label: string; href: string | null } | null {
+  if (!src) return null
+  const looksLikeUrl = /^(https?:\/\/)?[a-z0-9-]+(\.[a-z0-9-]+)+([/?#]|$)/i.test(src)
+  if (!looksLikeUrl) return { label: src, href: null }
+  const href = /^https?:\/\//i.test(src) ? src : `https://${src}`
   try {
-    return new URL(url).hostname.replace(/^www\./, "")
+    return { label: new URL(href).hostname.replace(/^www\./, ""), href }
   } catch {
-    return url
+    return { label: src, href: null }
   }
 }
 
@@ -52,6 +65,9 @@ export default async function CanonEntryPage({
   const prev = index > 0 ? canon[index - 1] : null
   const next = index < canon.length - 1 ? canon[index + 1] : null
   const position = index + 1
+  const source = provenance(entry.src)
+  // null in the published edition, where bodies are not shipped.
+  const manifest = await loadManifest(slug)
 
   const margin = (
     <InstrumentMargin>
@@ -93,6 +109,8 @@ export default async function CanonEntryPage({
             </Link>
           </div>
         </InstrumentPanel>
+
+        {manifest ? <LeafIndex manifest={manifest} /> : null}
       </div>
     </InstrumentMargin>
   )
@@ -109,15 +127,17 @@ export default async function CanonEntryPage({
         <p className="mt-4 font-mono text-sm uppercase tracking-[0.2em] text-muted-foreground">
           {entry.author} · <span className="text-instrument">{entry.year}</span>
         </p>
-        {entry.src ? (
+        {source?.href ? (
           <a
-            href={entry.src}
+            href={source.href}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-block font-mono text-xs text-gild underline decoration-gild/40 underline-offset-4 hover:decoration-gild"
           >
-            {hostOf(entry.src)} ↗
+            {source.label} ↗
           </a>
+        ) : source ? (
+          <span className="mt-2 inline-block font-mono text-xs text-muted-foreground">{source.label}</span>
         ) : null}
 
         <div className="mt-8">
@@ -142,6 +162,28 @@ export default async function CanonEntryPage({
             ))}
           </ul>
         </div>
+
+        {manifest ? (
+          <div className="mt-12 border-t border-border pt-6">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <Link
+                href={leafHref(entry.slug, 1)}
+                className="font-mono text-xs uppercase tracking-[0.2em] text-gild underline decoration-gild/40 underline-offset-[6px] transition-colors hover:text-instrument hover:decoration-instrument"
+              >
+                Begin reading →
+              </Link>
+              <p className="font-mono text-[0.65rem] uppercase tracking-wider text-muted-foreground">
+                {manifest.words.toLocaleString()} words · {manifest.leaves.length}{" "}
+                {manifest.leaves.length === 1 ? "leaf" : "leaves"}
+              </p>
+            </div>
+            <div className="mt-6 lg:hidden">
+              <LeafIndex manifest={manifest} max={260} />
+            </div>
+          </div>
+        ) : (
+          <BodyAbsentNote />
+        )}
 
         {/* Foot nav for narrow screens without the margin */}
         <nav className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-5 font-mono text-[0.7rem] uppercase tracking-wider lg:hidden">
