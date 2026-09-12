@@ -1,7 +1,18 @@
 # Combining the Illuminated Manuscript with the full corpus
 
-> Meant to be run locally in Claude Code. Every step below is a command or edit you make in
-> your own checkout — there is no round-trip back to v0. See `CLAUDE.md` for project context.
+> **This migration is done.** Kept as the record of the original plan. Where this document and
+> `CLAUDE.md` disagree, **`CLAUDE.md` is correct** — the shipped design differs from the sketch
+> below in three ways:
+>
+> 1. Bodies are split into ~2,500-word **leaves** at `content/canon/<slug>/NNN.html` with a
+>    `manifest.json`, not one `content/canon/<slug>.md` per work. A single 320k-word page is
+>    unreadable and unshippable.
+> 2. Markdown is converted to HTML **at parse time** (`marked`, a devDependency), so no markdown
+>    renderer reaches the browser. `react-markdown` was considered and not needed.
+> 3. Bodies are **local-only and gitignored**. Production deploys the index alone and the reader
+>    degrades to the summary view. That is a deliberate constraint, not an oversight.
+>
+> The rest of this file is the original guide.
 
 This project is two separable layers:
 

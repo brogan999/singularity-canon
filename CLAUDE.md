@@ -16,24 +16,38 @@ It has two separable layers:
 Stack: Next.js (App Router) + Tailwind v4 + TypeScript. Fonts: Fraunces (serif display),
 JetBrains Mono (instrument layer), Geist (sans). Package manager: pnpm.
 
-## Your job here: combine the design system with the FULL corpus
+## State: full corpus is wired up
 
-The data currently in `lib/canon-data.ts` was generated from the **lite** edition (metadata +
-summaries for 104 sources, body text dropped). The task is to regenerate it from the **full**
-corpus export (more sources + full body text). This is a **data-layer** task — the theme and the
-pages do not change.
-
-Full instructions are in `CANON-INTEGRATION.md`. Short version:
+`lib/canon-data.ts` is generated from the **full** corpus (104 sources, ~3.8M words), and the
+reader paginates the body text into "leaves".
 
 ```bash
-# metadata + summaries only (lean, bundled):
-node scripts/parse-canon.mjs path/to/full-corpus.md
+# index only — what production deploys:
+node scripts/parse-canon.mjs ~/singularity-canon/singularity-canon.md
 
-# also extract full body text to content/canon/<slug>.md, on-demand:
-node scripts/parse-canon.mjs path/to/full-corpus.md --with-body
+# index + body leaves under content/canon/ — local reading:
+node scripts/parse-canon.mjs ~/singularity-canon/singularity-canon.md --with-body
 ```
 
-Then wire `bodyPath` into the folio reader (`app/canon/[slug]/page.tsx`) — see the guide.
+### The rule that matters: bodies are local, never published
+
+The corpus includes commercial books from Alex's own shelf. `content/canon/` is **gitignored and
+must never be deployed**. Production ships the index only — the summaries, which are our own
+writing. The app is built so this is automatic: `loadManifest()` returns `null` when the bodies are
+absent and every reader page degrades to the summary view. Verify with
+`git status` before any commit, and by moving `content/` aside and re-running the app.
+
+### How bodies are chunked
+
+Word-budget driven (~2,500 words), breaking at paragraph boundaries, preferring chapter headings
+where a work has them. `chapterDepth()` picks the spine per work — the shallowest heading level
+appearing at least 3 times — because headings are unreliable across this corpus: the 180k-word
+Foom Debate and *Last and First Men* have none at all, while *Age of Em* has 148.
+`TARGET_WORDS`/`MIN_WORDS` are **frozen**: changing them repoints every `/canon/<slug>/<leaf>` URL.
+
+Leading extraction debris (ISBNs, copyright pages, download chrome, shredded contents lists) is
+trimmed by *signature*, never by length — a length rule ate the opening of every interview
+transcript, whose turns are short. Each manifest records `frontMatterDropped` so it stays auditable.
 
 ## Key files
 
@@ -42,7 +56,12 @@ Then wire `bodyPath` into the folio reader (`app/canon/[slug]/page.tsx`) — see
 | `scripts/parse-canon.mjs` | Turns the raw markdown export into `lib/canon-data.ts`. Format-driven. |
 | `lib/canon-data.ts` | AUTO-GENERATED. Never hand-edit; regenerate with the parser. |
 | `app/canon/page.tsx` | Contents/title page: search, part lens, year horizon. |
-| `app/canon/[slug]/page.tsx` | Folio reader for one source. Server Component — can read body files. |
+| `app/canon/[slug]/page.tsx` | Frontispiece: summary, Illuminations, "Begin reading", leaf index. |
+| `app/canon/[slug]/[leaf]/page.tsx` | The reader. One leaf, dynamic; leaves are not prerendered. |
+| `app/canon/search/page.tsx` | Local full-text search. Empty when bodies are absent. |
+| `lib/canon-body.ts` | Server-side leaf/manifest loading. Returns null when bodies are absent. |
+| `lib/canon-search.ts` | Linear in-memory scan of the leaves. No index by design. |
+| `components/canon/reader.tsx` | Body typography, leaf index, leaf nav, degradation note. |
 | `app/canon/chronology/page.tsx` | By-decade timeline. |
 | `components/canon/chrome.tsx` | Header + nav for the Canon section. |
 | `manuscript-ds/` | Portable theme + primitives. Reuse, don't fork. |
@@ -58,8 +77,11 @@ pnpm dev            # http://localhost:3000  → /canon
 ## Rules
 
 - Treat `lib/canon-data.ts` as a build artifact. Change the parser or the source, then regenerate.
-- Don't inline full body text into `lib/canon-data.ts` — it bloats the client bundle. Use
-  `--with-body` (files under `content/canon/`) or a database, and load per-slug on demand.
-- The in-memory substring search in `app/canon/page.tsx` is fine for summaries. For full-text
-  search across bodies, swap it for a real index (Postgres FTS or a search service).
-- Reuse `manuscript-ds` primitives for any new Canon UI so the aesthetic stays consistent.
+- Never let body text into `lib/canon-data.ts`. `app/canon/page.tsx` is a Client Component, so
+  everything in that module ships to the browser. Only `wordCount` and `leafCount` ride along.
+- Never commit or deploy `content/canon/`. See the rule above.
+- The in-memory substring search on the contents page covers summaries and is instant at this size.
+  Full-text search is a separate, local-only server scan — deliberately not an index, because one
+  would be larger than the 24 MB it indexes. Revisit only if it stops feeling fast.
+- Reuse `manuscript-ds` primitives for any new Canon UI so the aesthetic stays consistent. Body
+  typography rides in through `FolioProse`'s existing `className` — the design system is untouched.
