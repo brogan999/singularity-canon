@@ -1,0 +1,11 @@
+# The Vercel CLI uploads the working directory, and .gitignore does NOT govern
+# that upload. Without this file, `vercel --prod` ships the full body text of
+# the corpus — including commercial books — to a public URL.
+#
+# Production is summaries-only by design. Never remove these two lines.
+content/
+scripts/canon-source.md
+
+node_modules
+.next
+.git

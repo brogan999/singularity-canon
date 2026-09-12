@@ -16,3 +16,4 @@ node_modules
 # Full-corpus body text — local only, never published (contains commercial books)
 content/canon/
 scripts/canon-source.md
+.vercel
