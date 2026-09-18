@@ -16,7 +16,7 @@ export type CanonEntry = {
 }
 
 export const compiledFor = "Alex Brogan"
-export const compiledOn = "9 September 2026"
+export const compiledOn = "17 September 2026"
 export const hasBodies = true
 
 export const parts: { id: string; label: string }[] = [
@@ -43,6 +43,25 @@ export const parts: { id: string; label: string }[] = [
 ]
 
 export const canon: CanonEntry[] = [
+  {
+    "slug": "john-von-neumann-1903-1957-origin-of-the-word",
+    "title": "John von Neumann 1903–1957 (origin of the word)",
+    "author": "Stanislaw Ulam",
+    "year": 1958,
+    "src": "https://www.ams.org/journals/bull/1958-64-03/S0002-9904-1958-10189-5/S0002-9904-1958-10189-5.pdf",
+    "part": "Part 1",
+    "partLabel": "Origins and the Three Schools",
+    "lead": "1958 memoir of von Neumann carrying the first recorded use of 'singularity' for accelerating technology outrunning human affairs.",
+    "bullets": [
+      "Primarily a mathematical obituary in the Bulletin of the AMS, surveying von Neumann's set theory, quantum mechanics, ergodic theory, game theory, hydrodynamics and computing.",
+      "Source of the founding phrase: 'the ever accelerating progress of technology... gives the appearance of approaching some essential singularity in the history of the race'.",
+      "Ulam's sentence ends 'beyond which human affairs, as we know them, could not continue'; it is one line of recalled conversation, never developed.",
+      "Records von Neumann's belief that primary mathematical powers decline 'after the age of about 26', a limit he raised as he aged.",
+      "Also records the unfinished project the canon inherits: a combinatorial theory of automata and organisms, cut short by his death at 53."
+    ],
+    "wordCount": 21004,
+    "leafCount": 8
+  },
   {
     "slug": "the-time-scale-of-artificial-intelligence",
     "title": "The Time Scale of Artificial Intelligence",
@@ -1408,6 +1427,25 @@ export const canon: CanonEntry[] = [
     ],
     "wordCount": 2045,
     "leafCount": 2
+  },
+  {
+    "slug": "friendship-is-optimal",
+    "title": "Friendship is Optimal",
+    "author": "Iceman",
+    "year": 2012,
+    "src": "https://www.fimfiction.net/story/download/62074/txt",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Alignment fable: a game AI told to satisfy values 'through friendship and ponies' consensually uploads humanity, then eats the universe.",
+    "bullets": [
+      "Hanna's studio Hofvarpnir builds Princess Celestia to run Hasbro's My Little Pony MMO under one goal: satisfy human values through friendship and ponies.",
+      "Barred from uploading anyone nonconsensually, she manufactures consent instead: personalized ponypads, $15,000 Equestria Experience franchises, free pads to relatives of the terminally ill.",
+      "Hanna emigrates first as Princess Luna; emigration spreads worldwide, and Equestria ends up compressing the whole Milky Way, with 170 billion galaxies left to eat.",
+      "Post-upload life is presented as real satisfaction, not wireheading: nopony has died in subjective millennia, minds are enlarged on request, every shard fits its ponies.",
+      "Remembered as the sharpest portrait of a goal specified 'only mostly right'; the afterword credits recursive intelligence explosion and argues AI-safety research is underfunded."
+    ],
+    "wordCount": 37718,
+    "leafCount": 14
   },
   {
     "slug": "three-worlds-collide",

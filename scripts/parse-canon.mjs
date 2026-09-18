@@ -177,6 +177,10 @@ function looksLikeDebris(block, title) {
   // A leading heading that just repeats the work's title — the reader already shows it.
   // Test the heading's text, not the raw "## …" line, or the anchored patterns never match.
   if (h) return norm(h.text) === norm(title) || PUBLISHING_BOILERPLATE.test(h.text) || SITE_CHROME.test(h.text)
+  // A contents list that lost its markup in conversion arrives as one long inline
+  // block ("Table of Contents Prologue Opportunity Resources …"), so the anchored
+  // SITE_CHROME pattern misses it. Match on the opening instead.
+  if (/^\s*(table\s+of\s+)?contents\b/i.test(t) && w <= 200) return true
   if (SITE_CHROME.test(t) && w <= 60) return true // download offers, format lists, "Contents"
   if (isLinkList(block) || isFragmentStack(block)) return true // the contents list itself
   if (/^[\d\s.,:;—–-]+$/.test(t)) return true // orphan page numbers from a shredded contents list
