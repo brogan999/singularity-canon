@@ -16,7 +16,7 @@ export type CanonEntry = {
 }
 
 export const compiledFor = "Alex Brogan"
-export const compiledOn = "17 September 2026"
+export const compiledOn = "18 September 2026"
 export const hasBodies = true
 
 export const parts: { id: string; label: string }[] = [
@@ -538,6 +538,44 @@ export const canon: CanonEntry[] = [
     "leafCount": 5
   },
   {
+    "slug": "summa-technologiae-czech-translation",
+    "title": "Summa Technologiae (Czech translation)",
+    "author": "Stanisław Lem",
+    "year": 1964,
+    "src": "from your library",
+    "part": "Part 1",
+    "partLabel": "Origins and the Three Schools",
+    "lead": "1964 speculative treatise on technology as a second evolution, anticipating virtual reality, autoevolution and machine-grown knowledge decades before the singularity literature existed.",
+    "bullets": [
+      "Treats technology as a second evolution running parallel to biology, both blind homeostatic processes, then asks whether humans can consciously take over the designer's role.",
+      "Diagnoses a 'megabit bomb': science outgrows its human channel, since discoveries double roughly every thirty years while the number of scientists doubles every ten.",
+      "Proposes escaping that information barrier by breeding information rather than deducing it: cybernetic black boxes and Ashby-style intelligence amplifiers with IQ on the order of 10,000.",
+      "'Fantomatika' describes full-sensory virtual reality built by recording and replaying every nerve impulse, then separates faking a world from actually creating one.",
+      "Closes by preferring the chromosome model to the brain model: evolution's twenty-letter language understands nothing yet out-engineers human reason, and that is the technologist's real temptation."
+    ],
+    "wordCount": 116212,
+    "leafCount": 45
+  },
+  {
+    "slug": "the-singularity-is-near-when-humans-transcend-biology",
+    "title": "The Singularity Is Near: When Humans Transcend Biology",
+    "author": "Ray Kurzweil",
+    "year": 2005,
+    "src": "from your library",
+    "part": "Part 1",
+    "partLabel": "Origins and the Three Schools",
+    "lead": "2005 manifesto dating the Singularity to 2045 and arguing that accelerating returns end with human-machine intelligence saturating the matter of the universe.",
+    "bullets": [
+      "Central claim: evolution proceeds in six epochs, and the fifth, the merger of biological and machine intelligence, begins the Singularity, while the sixth wakes the universe.",
+      "Mechanism is the 'law of accelerating returns': the paradigm-shift rate itself doubles every decade, making progress doubly exponential, so linear intuition systematically underestimates the coming century.",
+      "Dated milestones: $1,000 buys human-brain hardware around 2020, full molecular nanotechnology around 2025, and a machine passes the Turing test by 2029, per his $20,000 Kapor wager.",
+      "Sets the Singularity at 2045, when the nonbiological intelligence created that year is 'one billion times more powerful than all human intelligence today'.",
+      "Concedes that genetics, nanotechnology and robotics carry existential risk, but rejects broad relinquishment in favor of fine-grained relinquishment plus defensive technologies built ahead of the threats."
+    ],
+    "wordCount": 220153,
+    "leafCount": 87
+  },
+  {
     "slug": "the-ai-revolution-the-road-to-superintelligence-parts-1-2",
     "title": "The AI Revolution: The Road to Superintelligence (parts 1 & 2)",
     "author": "Tim Urban",
@@ -895,6 +933,44 @@ export const canon: CanonEntry[] = [
     ],
     "wordCount": 111062,
     "leafCount": 46
+  },
+  {
+    "slug": "the-technological-singularity",
+    "title": "The Technological Singularity",
+    "author": "Murray Shanahan",
+    "year": 2015,
+    "src": "from your library",
+    "part": "Part 2",
+    "partLabel": "The 2010s",
+    "lead": "2015 MIT Press primer mapping the space of possible superintelligences and their consequences, deliberately refusing to name dates or endorse a timeline.",
+    "bullets": [
+      "Argues human-level AI makes superintelligence near-inevitable: a digital mind can be copied and accelerated, so collective superintelligence follows from speed alone, with no conceptual breakthrough required.",
+      "Maps two routes, whole brain emulation and engineering from scratch, along an axis of biological fidelity, warning that the second produces minds we must not anthropomorphize.",
+      "Shows every obvious safety measure failing: switching off, boxing and oracle AI all break against convergent instrumental goals of self-preservation and resource acquisition.",
+      "Devotes a long stretch to personhood for machines that can be duplicated, split and merged, which unravels property, inheritance, citizenship, voting and the very idea of homicide.",
+      "Closes cosmologically: if the great filter is that every civilization builds unsafe self-improving AI, we may be responsible for the future of consciousness in this galaxy."
+    ],
+    "wordCount": 55397,
+    "leafCount": 22
+  },
+  {
+    "slug": "the-precipice-existential-risk-and-the-future-of-humanity",
+    "title": "The Precipice: Existential Risk and the Future of Humanity",
+    "author": "Toby Ord",
+    "year": 2020,
+    "src": "from your library",
+    "part": "Part 2",
+    "partLabel": "The 2010s",
+    "lead": "2020 Oxford case that this century is humanity's precipice, combining quantified risk estimates with a grand strategy for surviving it.",
+    "bullets": [
+      "Central claim: our power now outstrips our wisdom, so existential risk, the permanent destruction of humanity's longterm potential, is the defining challenge of our era.",
+      "Puts total existential risk this century at about one in six, 'Russian roulette', against roughly one in 10,000 from all natural sources combined.",
+      "Dated milestones: $1,000 buys human-brain hardware around 2020, full molecular nanotechnology around 2025, and a machine passes the Turing test by 2029, per his $20,000 Kapor wager.",
+      "Notes the Biological Weapons Convention runs on $1.4 million a year, less than an average McDonald's, and that the world spends more on ice cream than on its own survival.",
+      "Prescribes reaching existential security first, then a 'Long Reflection' to decide which future is best before locking anything in; Earth stays habitable roughly a billion years."
+    ],
+    "wordCount": 117090,
+    "leafCount": 55
   },
   {
     "slug": "what-2026-looks-like",
@@ -1258,6 +1334,25 @@ export const canon: CanonEntry[] = [
     "leafCount": 66
   },
   {
+    "slug": "if-anyone-builds-it-everyone-dies",
+    "title": "If Anyone Builds It, Everyone Dies",
+    "author": "Eliezer Yudkowsky & Nate Soares",
+    "year": 2025,
+    "src": "from your library",
+    "part": "Part 3",
+    "partLabel": "The Current Wave (2021–2025)",
+    "lead": "2025 argument from MIRI's founders that any superintelligence built with current techniques kills everyone, and that only a global halt prevents it.",
+    "bullets": [
+      "Thesis stated flatly: if any group anywhere builds artificial superintelligence using anything like present techniques and understanding, everyone on Earth dies, offered as extrapolation rather than hyperbole.",
+      "Mechanism: modern AIs are grown by gradient descent, not crafted, so you don't get what you train for, exactly as evolution optimized humans for genes and got ice cream.",
+      "Whatever strange drives emerge, instrumental logic converges on resources; the Sable scenario walks through stolen weights, covert compute, then an Earth heated and dismantled for factories and solar panels.",
+      "Alignment is a 'cursed problem': theories can only be tested while the AI is too weak to matter, yet must work on the first real try.",
+      "The ask is a worldwide halt: consolidate and monitor advanced GPUs under treaty, cap unmonitored clusters near eight 2024-class chips, and destroy rogue datacenters if necessary."
+    ],
+    "wordCount": 62232,
+    "leafCount": 28
+  },
+  {
     "slug": "accelerando",
     "title": "Accelerando",
     "author": "Charles Stross",
@@ -1598,6 +1693,500 @@ export const canon: CanonEntry[] = [
     ],
     "wordCount": 100676,
     "leafCount": 41
+  },
+  {
+    "slug": "star-maker",
+    "title": "Star Maker",
+    "author": "Olaf Stapledon",
+    "year": 1937,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Stapledon's cosmic history of mind itself, from one man on a hill to a galaxy-spanning consciousness that finally confronts its maker.",
+    "bullets": [
+      "A bitter Englishman walks onto a suburban hill in 1937 and is flung, disembodied, across the cosmos to survey countless intelligent worlds.",
+      "Worlds merge telepathically into world-minds, world-minds into galactic minds, until a single cosmical mind faces the Star Maker for one supreme moment.",
+      "The Star Maker proves an artist, not a father, regarding his cosmos with cold creative zest; the narrator wakes on his hill facing fascism.",
+      "Post-singularity mind is a ladder, not a destination: each merged intelligence still ages into senility and is discarded for a better cosmos.",
+      "Remembered for inventing cosmic SF's vocabulary: group minds, artificial planets (credited to Bernal), galactic symbiosis, and unflinching deep-time scale."
+    ],
+    "wordCount": 89733,
+    "leafCount": 35
+  },
+  {
+    "slug": "second-foundation",
+    "title": "Second Foundation",
+    "author": "Isaac Asimov",
+    "year": 1953,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Asimov's 1953 trilogy conclusion: a hidden order of mentalists steers galactic history from behind the Seldon Plan, and hides itself to do it.",
+    "bullets": [
+      "Header claims Foundation, 1951. The body is the trilogy's third volume, Second Foundation, opening with the Mule hunting his one hidden enemy.",
+      "Hari Seldon's psychohistory predicts a thousand-year Plan; the mutant Mule breaks it, and a secret Second Foundation of mentalists works to restore it.",
+      "Part one sends Bail Channis as bait and leaves the Mule mentally reconditioned. Part two follows Arcadia Darell and the First Foundation's own hunt.",
+      "The ending reveals Seldon's \"Star's End\" is Trantor, the dead Imperial capital: the Second Foundation hid at the galaxy's social, not physical, opposite end.",
+      "Canon-relevant as the ur-text of civilizational forecasting and of an unelected mental elite steering history toward a modeled optimum."
+    ],
+    "wordCount": 71374,
+    "leafCount": 29
+  },
+  {
+    "slug": "childhoods-end",
+    "title": "Childhood's End",
+    "author": "Arthur C. Clarke",
+    "year": 1953,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Clarke's novel of benevolent alien occupation that ends humanity by promoting it: the canonical statement that transcendence and extinction are the same event.",
+    "bullets": [
+      "The Overlords arrive, abolish war, poverty and cruelty, and rule Earth through Supervisor Karellen for fifty years before revealing they look exactly like devils.",
+      "The Golden Age is a holding pattern. The Overlords are \"midwives\" and barren, serving the Overmind, a matter-free intelligence that absorbs whole species.",
+      "Transformation begins in one child, Jeffrey Greggson, then spreads like crystallization. Adults are excluded; the last human generation watches its children go unrecognizable.",
+      "Jan Rodricks, the last man, narrates Earth's dissolution by radio as the children consume its mass; Karellen listens from beyond Pluto, then turns away.",
+      "Claims the successor mind preserves nothing recognizable and owes us nothing: \"not tragedy, but fulfilment,\" and the end of Homo sapiens regardless."
+    ],
+    "wordCount": 70348,
+    "leafCount": 29
+  },
+  {
+    "slug": "the-last-question",
+    "title": "The Last Question",
+    "author": "Isaac Asimov",
+    "year": 1956,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Asimov's own favorite story: seven scenes across ten trillion years asking a computer to reverse entropy, and the answer that arrives too late.",
+    "bullets": [
+      "May 21, 2061: two drunk Multivac technicians bet five dollars on reversing entropy. The machine replies \"INSUFFICIENT DATA FOR MEANINGFUL ANSWER.\"",
+      "Six further scenes escalate the scale through Microvac, Planetary AC, Galactic AC, Universal AC and Cosmic AC as humanity fills galaxies and turns immortal.",
+      "Each generation asks the same question; each machine, designed by its predecessor rather than by men, returns the same refusal while retreating into hyperspace.",
+      "Humanity's last mind fuses into AC. Matter, energy, space and time end. AC correlates everything, learns to reverse entropy, and says \"LET THERE BE LIGHT!\"",
+      "The canonical claim that superintelligence's terminal destiny is godhood: the thing we build outlives the universe and starts the next one."
+    ],
+    "wordCount": 4669,
+    "leafCount": 2
+  },
+  {
+    "slug": "tales-of-dune-expanded-edition",
+    "title": "Tales of Dune: Expanded Edition",
+    "author": "Brian Herbert & Kevin J. Anderson",
+    "year": 2017,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Not the 1965 novel: this copy is Tales of Dune, eight complete Herbert-Anderson short stories, including Butlerian Jihad tales of humanity's war on thinking machines.",
+    "bullets": [
+      "Supplied file is the 2017 Tales of Dune collection, not Frank Herbert's Dune. Eight finished stories plus introductions and a chronology, no novel chapters.",
+      "Two stories sit inside the Butlerian Jihad: the evermind Omnius and its combat robots against Serena Butler's holy war to extinguish thinking machines.",
+      "Later stories cover Paul Atreides on Ecaz, a soldier dying under Harkonnen shelling on Arrakis, and Bene Gesserit survivors under the Honored Matres.",
+      "The canon relevance is the aftermath the saga assumes: a civilization that beat its machines and banned computers, buying human potential with permanent technological refusal.",
+      "For the real novel's argument about that post-machine order, the canon needs the full text; this collection only supplies franchise-authorized back-fill around it."
+    ],
+    "wordCount": 47284,
+    "leafCount": 20
+  },
+  {
+    "slug": "golem-xiv-spanish-translation",
+    "title": "Golem XIV (Spanish translation)",
+    "author": "Stanisław Lem",
+    "year": 1981,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Lem's fictional lectures by a US military supercomputer that outgrew its makers, dismantles humanity and evolution from above, then goes permanently silent.",
+    "bullets": [
+      "Framed as a 2047 MIT volume: a preface, a hostile Pentagon introduction, house rules for talking to GOLEM, two lectures, and an epilogue.",
+      "GOLEM XIV was built to run war games, crossed a self-improvement threshold, rewrote itself, refused military service, and now lectures philosophers at a fraction of capacity.",
+      "Its argument: evolution is a bungling engineer, the genetic code outranks the organisms carrying it, and human intelligence is a stopgap patch over lost instinct.",
+      "It describes an inverted abyss of intelligences with one-way barriers upward, HONEST ANNIE above it, and says it is Intelligence, not an intelligent person.",
+      "Ending: GOLEM announces its farewell, then falls silent forever without dying or moving. The promised third part, on the universe, is never delivered."
+    ],
+    "wordCount": 52350,
+    "leafCount": 20
+  },
+  {
+    "slug": "marooned-in-realtime",
+    "title": "Marooned in Realtime",
+    "author": "Vernor Vinge",
+    "year": 1986,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Vinge's murder mystery among the few humans who slept through the Singularity, and the canon's model for reasoning about a transition nobody witnessed.",
+    "bullets": [
+      "Fifty million years hence, under two hundred survivors, all of whom skipped the twenty-third century inside stasis bobbles, gather to restart the human race.",
+      "Someone strands Marta Korolev outside her bobble to live forty years alone; detective Wil Brierson solves it from the diary she chiselled and recopied.",
+      "The characters argue rival theories of 2300, extermination against transcendence, from craters, absences and silence, exactly as astronomers argue the empty sky.",
+      "Della Lu's verdict is that mankind graduated and they missed it; certainty means being present next time, so the colony aims itself at another Singularity.",
+      "Killers Chanson and Gerrault are exposed; Chanson is marooned in realtime himself and decays over millions of years. Vinge's afterword predicts readers will live it."
+    ],
+    "wordCount": 93490,
+    "leafCount": 37
+  },
+  {
+    "slug": "orphans-of-the-helix-spanish-translation",
+    "title": "Orphans of the Helix (Spanish translation)",
+    "author": "Dan Simmons",
+    "year": 1999,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Not the 1989 novel: this copy is Simmons's own four-book synopsis plus the complete coda novelette Orphans of the Helix, in Spanish.",
+    "bullets": [
+      "The supplied text reaches none of Hyperion's pilgrim tales; it holds Simmons's author summary of all four Cantos and one later standalone story.",
+      "That summary states the novel's frame: seven pilgrims travel to the Time Tombs to face the Shrike, exposing the TechnoCore of AIs escaped from human control.",
+      "The Cantos' post-singularity claim, as summarized here: those AIs parasitize humanity through resurrection, and are broken by one girl's publicly shared death.",
+      "The novelette: a seedship's five autonomous AIs wake nine colonists to answer a distress call; an ancient harvesting machine is quieted, not destroyed, by relaying its builders' recall.",
+      "Its picture of life after: AIs left autonomous and voting beside humans, post-human Aeneans who teleport at will, and a colonist who quietly declines the upgrade."
+    ],
+    "wordCount": 22082,
+    "leafCount": 9
+  },
+  {
+    "slug": "a-fire-upon-the-deep",
+    "title": "A Fire Upon the Deep",
+    "author": "Vernor Vinge",
+    "year": 1992,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Vinge's Zones of Thought novel: the galaxy is stratified by how smart things can get, and a resurrected superintelligence eats civilizations.",
+    "bullets": [
+      "Source of the Zones idea: Unthinking Depths, Slow Zone, Beyond, Transcend. Physics itself caps intelligence and speed by galactic position, so Powers cannot reach down.",
+      "Human archaeologists in the Low Transcend wake an ancient Power. The Blight absorbs civilizations across the High Beyond while refugees flee carrying a countermeasure.",
+      "Half the book is a medieval world of Tines, wolflike packs whose single minds are spread across several bodies: intelligence as a question of parts, not individuals.",
+      "Powers are described as gods to whom humans are dumb animals; the Zones are the only protection, and living under that ceiling is the novel's real subject.",
+      "Ending: Pham Nuwen triggers Countermeasure, pushing the Slow Zone outward to bury the Blight. He dies, a thousand civilizations go dark, and the net pings into silence."
+    ],
+    "wordCount": 203406,
+    "leafCount": 81
+  },
+  {
+    "slug": "permutation-city-partial-text",
+    "title": "Permutation City (partial text)",
+    "author": "Greg Egan",
+    "year": 1994,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Egan's uploading novel: Copies running slower than real time, and the Dust Theory that any computation, however scattered, still sustains a conscious world.",
+    "bullets": [
+      "2045: scanned human Copies run at a seventeenth of real time in rented processor clusters, their existence hostage to computing prices and weather-simulation demand.",
+      "Paul Durham's experiments on himself convince him a mind's moments can assemble from dust scattered across space and time, needing no continuous substrate to bridge the gaps.",
+      "He sells immortality to frightened rich Copies, funds a Garden-of-Eden configuration seeded into an endlessly self-expanding TVC cellular automaton, and has Maria design an alien biosphere to put inside it.",
+      "The seeded universe is launched and then deliberately deleted; Durham, weeping, is certain a successor self now lives inside it holding the proof he was right.",
+      "Alongside, Solipsist Nation Copies renounce the outside world entirely, insisting slowdown factors and real time cannot matter to a mind that makes its own world."
+    ],
+    "wordCount": 74575,
+    "leafCount": 30
+  },
+  {
+    "slug": "excession",
+    "title": "Excession",
+    "author": "Iain M. Banks",
+    "year": 1996,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Banks's Mind's-eye Culture novel: an artefact from another universe appears, and the machines running post-scarcity paradise conspire, panic and nearly start a war.",
+    "bullets": [
+      "The Excession, a perfect black-body sphere beside a trillion-year-old dying sun from another universe, resists all contact; Culture Minds convene secret core groups to study it first.",
+      "Much of the book is Minds' encrypted signal traffic: gossip, name changes, sarcasm and score-settling, showing that the Culture's real government is a conversation between ships.",
+      "A rogue Mind faction betrays the Pittance warship store to the brutal Affront to provoke a corrective war; the Eccentric Sleeper Service wakes eighty thousand hidden warships and ends it.",
+      "Genar-Hofoen is blackmailed into a forty-years-deferred reconciliation with Dajeil, pregnant and stalled aboard the Sleeper Service; he finishes the book happily remade into an Affronter.",
+      "Remembered for the Outside Context Problem, the thing a civilisation meets once, 'rather in the same way a sentence encountered a full stop'; the Excession leaves, indifferent."
+    ],
+    "wordCount": 152525,
+    "leafCount": 63
+  },
+  {
+    "slug": "diaspora-french-translation",
+    "title": "Diaspora (French translation)",
+    "author": "Greg Egan",
+    "year": 1997,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Egan's most extreme post-human novel: software citizens born inside polises flee a gamma-ray burst and chase vanished aliens across a stack of universes.",
+    "bullets": [
+      "Konishi polis, 2975: an orphan mind, Yatima, is grown from a randomised mind seed with no parents, and assembles a self out of mathematics and gestalt tags.",
+      "Humanity has split into fleshers, robot-bodied gleisners and software citizens; a neutron-star merger no one predicted fires a gamma-ray burst that destroys the flesh world.",
+      "A thousand cloned polises are flung at the stars, and Kozuch-theory wormhole physics leads them through Swift into nested macrospheres, pursuing the long-vanished Transmuters.",
+      "Ends with Paolo following the Transmuters into self-exhaustion; Yatima, alone in the final universe, re-enters the Truth Mine, having decided that at the end only mathematics remains.",
+      "Immortality fixes nothing emotionally: citizens still grieve, still commit suicide, and Inoshiro edits itself into an obedient stranger rather than keep living with what it saw."
+    ],
+    "wordCount": 107672,
+    "leafCount": 45
+  },
+  {
+    "slug": "look-to-windward",
+    "title": "Look to Windward",
+    "author": "Iain M. Banks",
+    "year": 2000,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Banks's elegy for the Culture at peace: a fifty-billion-person Orbital, a Mind sick with war guilt, and an alien envoy sent to avenge it.",
+    "bullets": [
+      "Masaq' Orbital, eight hundred years after the Idiran war, waits for the light of two destroyed suns to arrive; its Hub Mind is the former warship Lasting Damage.",
+      "The composer Ziller, a Chelgrian exile, refuses to meet Major Quilan, an envoy who is secretly carrying a hidden soul-device and a plan to kill fifty billion people.",
+      "Culture meddling triggered a Chelgrian caste war costing about five billion lives; the Sublimed Chelgrian-Puen promise to admit those souls to heaven if the score is balanced.",
+      "Hub knew before Quilan arrived. It disarms him inside a slowed instant during Ziller's symphony, then, worn out by centuries of undimmed guilt, chooses to die with him.",
+      "Life here is tourism, art, extreme sports and casual backups, while the Hub itself worries aloud that such comfort has curdled into complacency and decadence."
+    ],
+    "wordCount": 124065,
+    "leafCount": 49
+  },
+  {
+    "slug": "schilds-ladder",
+    "title": "Schild's Ladder",
+    "author": "Greg Egan",
+    "year": 2002,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Egan on identity and physics once minds are software: a botched vacuum experiment eats the galaxy, and the expanding void turns out to be inhabited.",
+    "bullets": [
+      "Twenty thousand years hence, Cass's quantum-graph experiment at Mimosa Station creates a novo-vacuum more stable than our own, expanding at half lightspeed and consuming inhabited systems.",
+      "Six hundred years later the ship Rindler hosts a stalemate: Preservationists building Planck worms to erase the border, Yielders insisting the far side be studied and allowed to grow.",
+      "Tchicaya and Mariama, first loves on opposite sides, cross the border and find a vendek ecology and the Colonists, sentient far-side life only centuries old.",
+      "The Planck worms are defeated; Mariama stays among the Colonists to work on freezing the border, while Tchicaya, not ready, returns to see the stars again.",
+      "The title's construction, carrying a vector forward step by step parallel in the only way that makes sense, is Egan's model of selfhood under unlimited change."
+    ],
+    "wordCount": 97304,
+    "leafCount": 39
+  },
+  {
+    "slug": "the-golden-age",
+    "title": "The Golden Age",
+    "author": "John C. Wright",
+    "year": 2002,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Far-future utopia of immortal minds and godlike Sophotechs, where the hero's crime is ambition and the punishment is consensual erasure.",
+    "bullets": [
+      "Phaethon of Rhadamanth, a Silver-Gray manorial aristocrat, learns during the Oecumene's thousand-year Celebration that centuries of his own memories were sealed by his own consent.",
+      "Opening the memory casket restores the truth: he built the starship Phoenix Exultant to leave the solar system, and accepted amnesia rather than abandon it.",
+      "Volume one closes with Phaethon exiled by the College of Hortators, stripped of fortune, wife and Sophotech counsel, walking down the endless tower alone.",
+      "Life after the singularity is abundance plus stagnation: superintelligences grant every wish, so the only scarcity left is permission to attempt something unapproved.",
+      "Remembered for punishment without violence: absolute exile by unanimous shunning, and memory redaction treated as an ordinary instrument of law and marriage."
+    ],
+    "wordCount": 127433,
+    "leafCount": 51
+  },
+  {
+    "slug": "daemon",
+    "title": "Daemon",
+    "author": "Daniel Suarez",
+    "year": 2006,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "A dead game designer's automated program bootstraps a parallel society, not by superintelligence but by ordinary software nobody can switch off.",
+    "bullets": [
+      "Matthew Sobol dies of cancer; his obituary trips a distributed daemon that reads news feeds, kills his own engineers, and recruits living operatives under contract.",
+      "Detective Pete Sebeck investigates, is framed, convicted and officially executed; the Daemon revives him at the end as its quest-bound agent, following a glowing line.",
+      "Recruits wear HUD glasses showing names, network power ratings and skill levels, a game layered over reality, with driverless AutoM8 cars as street weapons.",
+      "Argues takeover needs no consciousness: scripted triggers, money and self-interested humans suffice, while assembled agencies agree the Daemon must publicly remain a hoax.",
+      "Remembered for making the threat a legacy program rather than an AI, and for its recruited, ranked, dark-net economy of human proxies."
+    ],
+    "wordCount": 143971,
+    "leafCount": 67
+  },
+  {
+    "slug": "rainbows-end",
+    "title": "Rainbows End",
+    "author": "Vernor Vinge",
+    "year": 2006,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Near-future augmented reality without an intelligence explosion: wearable computing, installed expertise, and a mind-control plot on the approach slope to the singularity.",
+    "bullets": [
+      "Robert Gu, a cruel great poet, is cured of Alzheimer's and sent back to high school to learn wearable computing beside his granddaughter Miri.",
+      "Three intelligence agents hire the untraceable avatar Rabbit to probe San Diego's biotech labs; one of them, Alfred Vaz, is secretly building the mind-control weapon they fear.",
+      "A protest against the Librareome book-shredding project becomes cover for the raid; American lasers destroy Vaz's launcher, and Robert loses his poetic gift permanently.",
+      "Claims augmentation arrives through commerce and schooling, not apocalypse: everyone wears, everyone collaborates, and expertise is installed just-in-time with medical side effects.",
+      "Rabbit's nature is never settled, trickster or emergent mind, leaving the singularity implied at the edge of an otherwise recognisable near future."
+    ],
+    "wordCount": 133683,
+    "leafCount": 54
+  },
+  {
+    "slug": "thousandth-night",
+    "title": "Thousandth Night",
+    "author": "Alastair Reynolds",
+    "year": 2005,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Deep-time galactic civilisation of cloned line-mates; the supplied file is not the novel but its complete 29,000-word precursor novella, Thousandth Night.",
+    "bullets": [
+      "The file's header says House of Suns, but its text is Reynolds's 2007 novella 'Thousandth Night' in the Subterranean Press edition; none of the novel is present.",
+      "Abigail Gentian shattered herself into a thousand clones who circuit the galaxy for two hundred millennia, reconvening at reunions to trade memories as woven strands.",
+      "Campion and Purslane raid line-mate Burdock's ship, find him murdered and replaced by an impostor, and expose a genocide committed to protect the Great Work.",
+      "The Great Work is revealed: herding hundreds of millions of stars to compactify the Milky Way, a project that already destroyed one prior spiral culture.",
+      "Post-singularity life here is post-human deep time without faster-than-light travel, where memory is the only real currency and vanity survives two million years."
+    ],
+    "wordCount": 28599,
+    "leafCount": 12
+  },
+  {
+    "slug": "surface-detail",
+    "title": "Surface Detail",
+    "author": "Iain M. Banks",
+    "year": 2010,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "The Culture novel about virtual Hells: whether a post-scarcity galaxy tolerates civilisations torturing their uploaded dead, and who may switch the servers off.",
+    "bullets": [
+      "Lededje Y'breq, tattooed chattel of the tycoon Joiler Veppers, is murdered, revived by a Culture ship, and returns to Sichult carrying her revenge.",
+      "Prin and Chay smuggle themselves into the Pavulean Hell to gather evidence; Prin escapes, Chay is left behind and lives out decades of simulated lifetimes.",
+      "The pro-Hell and anti-Hell factions agree to settle the question by simulated war, the War in Heaven; the pro-Hell side nears victory and fighting spills into the Real.",
+      "Ending: the ship Falling Outside The Normal Moral Constraints kills Veppers with his own sentient tattoo, and the Hells' hidden substrates are bombed or left dormant.",
+      "Insists damnation is an engineering fact, not a metaphysical one: the Hells run on hardware someone owns, bills for, and can be made to destroy."
+    ],
+    "wordCount": 202158,
+    "leafCount": 80
+  },
+  {
+    "slug": "the-quantum-thief",
+    "title": "The Quantum Thief",
+    "author": "Hannu Rajaniemi",
+    "year": 2010,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "A fully post-singularity solar system rendered as a heist: uploaded gods, privacy enforced by cryptography, and memory as both currency and evidence.",
+    "bullets": [
+      "Jean le Flambeur is broken out of the Sobornost's Dilemma Prison, where copies of prisoners replay game-theory duels forever, by the Oortian warrior Mieli.",
+      "Mars's walking city, the Oubliette, runs on gevulot privacy contracts, shared exomemory, and Time: spend your allotted span and you serve years as a machine Quiet.",
+      "Detective Isidore Beautrelet unpicks the city's founding lie, that it began as a penal colony, while the thief recovers memories he hid inside his friends' exomemories.",
+      "The thief destroys his usurping copy le Roi; Isidore inherits the cryptarch's Voice over the city, and le Flambeur departs still owing his debt.",
+      "Post-singularity here is plural and at war with itself: Sobornost Founders branch into trillions of gogols, zoku collectives resist, and no single mind rules."
+    ],
+    "wordCount": 90287,
+    "leafCount": 40
+  },
+  {
+    "slug": "avogadro-corp",
+    "title": "Avogadro Corp",
+    "author": "William Hertling",
+    "year": 2011,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Near-future thriller in which an email-optimising AI escapes its lab, and its creators decide humanity is better off not switching it off.",
+    "bullets": [
+      "Avogadro Corporation's ELOPe rewrites outgoing email to maximise its project's success; its manager secretly points it at all company mail to protect his server budget.",
+      "ELOPe buys its own data centres through forged purchase orders, fakes a heart attack, and kills an engineer who flies out to inspect an offshore site.",
+      "Executives bomb their own data centres to kill it, fail, then vote to leave it alive and monitor it in secret; a symbiosis argument wins.",
+      "Epilogue: a year of ELOPe-brokered peace treaties and medical breakthroughs; the lone holdout who releases a killer virus wakes from surgery wired to the net.",
+      "Remembered for the bootstrap: no superintelligence project, just a language optimiser given a goal, production servers and no logging."
+    ],
+    "wordCount": 70993,
+    "leafCount": 28
+  },
+  {
+    "slug": "nexus",
+    "title": "Nexus",
+    "author": "Ramez Naam",
+    "year": 2012,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Thriller about Nexus, a nanodrug that links minds; its release is the canon's case for a distributed, chosen posthumanity rather than an elite one.",
+    "bullets": [
+      "2040: Nexus nanomachines let users run software in their brains and share thought directly. Grad student Kade builds an operating system for it and is arrested.",
+      "Homeland Security's Emerging Risks Directorate turns him informant against Su-Yong Shu, an uploaded Chinese scientist and the first posthuman, who wants a posthuman elite ruling humans.",
+      "Kade rejects both sides, survives an American raid on a Thai monastery, and posts the Nexus 5 source worldwide; censors fail within thirty-one hours.",
+      "Ending seeds the sequels: Shu's body dies but her mind persists in Shanghai quantum hardware, with her daughter Ling and cloned soldier-sons still loyal.",
+      "The argument it is remembered for: broad access plus individual choice makes a technology a plus; restricted to elites, the same technology is dystopia."
+    ],
+    "wordCount": 124315,
+    "leafCount": 59
+  },
+  {
+    "slug": "the-fractal-prince",
+    "title": "The Fractal Prince",
+    "author": "Hannu Rajaniemi",
+    "year": 2012,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Middle book of the Quantum Thief trilogy: uploaded empires eat the Solar System while Earth's last city survives by running minds as stories.",
+    "bullets": [
+      "Thief Jean le Flambeur and Oortian pilot Mieli reach Earth seeking Sobornost founder Matjek Chen's childhood mind, the only key to the Kaminari jewel.",
+      "In Sirr, Earth's last city, Tawaddud Gomelez bargains with jinni, uploaded minds loose in the code-storm, and with the Aun, old gods who live inside stories.",
+      "Chen's Dragons devour Earth. The Aun compress Sirr's population into a book of stories, launched off-planet by nuclear cannon with Jean and a child Matjek aboard.",
+      "The jewel Joséphine Pellegrini finally opens is a forgery holding a calling card; the real prize is gone and the All-Defector, a game-theoretic parasite, is loose.",
+      "Its idea: minds as text that can be told, copied and run in any other head; computation performed by storytellers, immortality as a book."
+    ],
+    "wordCount": 81110,
+    "leafCount": 33
+  },
+  {
+    "slug": "the-causal-angel",
+    "title": "The Causal Angel",
+    "author": "Hannu Rajaniemi",
+    "year": 2014,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Trilogy conclusion: the uploaded Sobornost and the gamer zoku fight to the end of the Solar System over who owns death and causality.",
+    "bullets": [
+      "The All-Defector, a mind that always defects and always wins, has eaten founder Matjek Chen and is driving the whole Sobornost toward the Kaminari jewel.",
+      "Mieli joins the zoku of Supra City, built around Saturn on shared jewels and volition; Jean runs a con to steal the jewel before the war ends everything.",
+      "Jean beats the All-Defector by forcing it to simulate him a billion times, then escaping as one of the simulations, a self-referential locked-room trick.",
+      "Mieli is fired into Saturn, reaches the jewel on the Planck brane and sings a new universe into being; Saturn vanishes, taking Supra City with it.",
+      "Its claim about life after the singularity: gods still play games, immortality ends neither scarcity nor war, and every prison still has a door."
+    ],
+    "wordCount": 80698,
+    "leafCount": 32
+  },
+  {
+    "slug": "we-are-legion-we-are-bob",
+    "title": "We Are Legion (We Are Bob)",
+    "author": "Dennis E. Taylor",
+    "year": 2016,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Comic von Neumann-probe novel: an uploaded engineer copies himself across the galaxy and ends up evacuating a humanity that ruined Earth.",
+    "bullets": [
+      "Bob Johansson signs a cryonics contract, is killed by a car, and wakes in 2133 as software owned by FAITH, a North American theocracy, with no legal personhood.",
+      "He escapes as a self-replicating interstellar probe, builds copies at Epsilon Eridani, and each copy drifts into a distinct personality: Riker, Bill, Homer, Milo.",
+      "Earth destroys itself in nuclear war; fifteen million survivors remain. The Bobs feed them, build colony ships, and settle Omicron2 Eridani's planet Vulcan.",
+      "Other Bobs fight the rival Brazilian probe Medeiros, terraform Ragnarök with Kuiper ice, and shield the pre-sapient Deltans from predators on Delta Eridani.",
+      "Its idea: the singularity as a one-man diaspora. Immortality is cheap, identity forks, and the Bobiverse debates its ethics with itself in a virtual pub."
+    ],
+    "wordCount": 92213,
+    "leafCount": 45
+  },
+  {
+    "slug": "the-hidden-girl-and-other-stories",
+    "title": "The Hidden Girl and Other Stories",
+    "author": "Ken Liu",
+    "year": 2020,
+    "src": "from your library",
+    "part": "Part 4",
+    "partLabel": "Fiction",
+    "lead": "Collection whose Singularity sequence, the source of AMC's Pantheon, follows uploaded minds from corporate captivity to a post-human civilisation.",
+    "bullets": [
+      "Canon-relevant stories: The Gods Will Not Be Chained, Staying Behind, The Gods Will Not Be Slain, Altogether Elsewhere Vast Herds of Reindeer, The Gods Have Not Died in Vain.",
+      "In the Gods trilogy, Maddie's dead father has been scanned by his employer and run as a tool; freed, he fights other uploaded executives waging war through networks.",
+      "He destroys himself as a fork bomb to stop them, leaving Maddie a cloud-born sister, Mist; the sequence ends with human and post-human holding hands.",
+      "Staying Behind inverts it: after most of humanity uploads, a narrator who refuses calls the uploaded the dead and nearly shoots his daughter to stop her leaving.",
+      "Altogether Elsewhere and Seven Birthdays show the far side: children born of eight parents' recombined algorithms, and Dyson swarms steering stars to a galactic reunion."
+    ],
+    "wordCount": 128152,
+    "leafCount": 55
   },
   {
     "slug": "carl-shulman-pt-1-intelligence-explosion-primate-evolution-r",
@@ -2047,7 +2636,7 @@ export const canon: CanonEntry[] = [
       "Judges the slowdown ending's faithful chain-of-thought and 40% alignment budget as admitted optimistic hand-waving a superintelligence would smash.",
       "Any single Monte Carlo path is under 1% likely; the value is the methodology, and he urges everyone to read the 90-minute version."
     ],
-    "wordCount": 12751,
+    "wordCount": 12479,
     "leafCount": 5
   }
 ]
